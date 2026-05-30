@@ -1,0 +1,326 @@
+@charset "utf-8"
+/*                           **************Kriss-Design / Utvikling*************                            */
+/*Dropdown*/
+
+/* Navigation menu for graphics */
+#navigation
+  background-color: transparent
+  padding: 10px
+  position: relative
+  top: 25px
+  width: 180px
+  left: 87px
+  border-radius: 20px
+
+.appearence
+  position: relative
+  display: inline-block
+  top: -10px
+  left: -10px
+  z-index: 10
+.appearence_button
+  background-color: #cccccc
+  background-image: linear-gradient(#808080,#d3d3d3)
+  color: #000000
+  padding: 10px
+  font-size: 1em
+  font-family: Opensans, georgia
+  border: none
+  border-right-style: solid
+  border-right-width: 1px
+  border-right-color: #000000
+  cursor: pointer
+  border-top-left-radius: 20px
+  border-bottom-left-radius: 20px
+.appearence_button:after
+  content: ''
+  position: absolute
+  top: 0px
+  left: -1px
+  width: calc(100% - 0px)
+  height: 50%
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+  border-top-left-radius: 20px
+
+.typographic
+  position: relative
+  display: inline-block
+  top: -10px
+  left: -14px
+  z-index: 10
+.typographic_button
+  background: #cccccc /*for compatibility with older browsers*/
+  background-image: linear-gradient(#808080,#d3d3d3)
+  color: black
+  padding: 10px
+  font-size: 1em
+  font-family: Opensans, georgia
+  border: none
+  border-top-right-radius: 20px
+  border-bottom-right-radius: 20px
+  cursor: pointer
+.typographic_button:after
+  content: ''
+  position: absolute
+  top: 0px
+  left: 0px
+  width: calc(100% - -2px)
+  height: 50%
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+  border-top-right-radius: 20px
+/*End of Dropdown*/
+
+/* Carousel*/
+#carousel
+  max-width: 312px
+  position: relative
+  margin: auto
+.slideshow
+  display: none
+/*Next & previous*/
+.prev, .next
+  cursor: pointer
+  position: absolute
+  top: 50%
+  width: auto
+  margin-top: -22px
+  padding: 16px
+  color: white
+  font-weight: bold
+  font-size: 18px
+  transition: 0.6s ease
+  border-radius: 0px 3px 3px 0px
+/*Next button to > right*/
+.next
+  right: 0
+  border-radius: 3px 0px 0px 3px
+/* Psudo : buttons*/
+.prev:hover, .next:hover
+  background-color: rgba(0,0,0,0.8)
+/*Capiton*/
+.capiton
+  color: #f5f5f5
+  font-weight: bold
+  font-family: opensans, georgia
+  font-size: 1em
+  text-align: center
+  position: absolute
+  padding: 8px 12px
+  width: 100%
+  margin-left: 20%
+  bottom: 8px
+
+/* Indicators*/
+#indicator
+  text-align: center
+.indicator
+  background-color: #bbb
+  border-radius: 50%
+  transition: background-color 0.6 ease
+  display: inline-block
+  margin: 0px 2px
+  width: 13px
+  height: 13px
+  cursor: pointer
+
+.active, .indicator:hover
+  background-color: #f5f5f5
+/*Animation : Fading*/
+.fade
+  -webkit-animation-name: fade
+  -webkit-animation-duration: 1.5s
+  animation-name: fade
+  animation-duration: 1.5s
+@-webkit-keyframes fade
+  from
+    opacity: .4
+  to
+    opacity: 1
+@keyframes fade
+  from
+    opacity: .4
+  to
+    opacity: 1
+hr.hr
+  border: 0px
+  width: 90px
+  height: 1px
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+.des
+  padding: 15px
+  border: none
+  font-family: 'Open Sans', sans-serif
+  text-align: center
+.design
+  width: 100%
+  background-color: #eff0f1
+  position: relative
+  padding-bottom: 30px
+  z-index: 9
+@media only screen and (min-width: 1080px)
+  /*Dropdown*/
+
+  /* Navigation menu for graphics */
+  #navigation
+    background-color: transparent
+    padding: 10px
+    position: relative
+    top: 25px
+    width: 326px
+    left: 500px
+    border-radius: 20px
+
+
+  .appearence
+    position: relative
+    display: inline-block
+    top: -10px
+    left: -10px
+  .appearence_button
+    background-color: #cccccc
+    background-image: linear-gradient(#808080,#d3d3d3)
+    color: #000000
+    padding: 10px
+    font-size: 1em
+    font-family: Opensans, georgia
+    border: none
+    border-right-style: solid
+    border-right-width: 1px
+    border-right-color: #000000
+    cursor: pointer
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px
+  .appearence_button:after
+    content: ''
+    position: absolute
+    top: 0px
+    left: -1px
+    width: calc(100% - 0px)
+    height: 50%
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+    border-top-left-radius: 20px
+
+  .typographic
+    position: relative
+    display: inline-block
+    top: -10px
+    left: -14px
+    z-index: 10
+  .typographic_button
+    background: #cccccc /*for compatibility with older browsers*/
+    background-image: linear-gradient(#808080,#d3d3d3)
+    color: black
+    padding: 10px
+    font-size: 1em
+    font-family: Opensans, georgia
+    border: none
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
+    cursor: pointer
+  .typographic_button:after
+    content: ''
+    position: absolute
+    top: 0px
+    left: 0px
+    width: calc(100% - -2px)
+    height: 50%
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+    border-top-right-radius: 20px
+
+
+
+  /*End of Dropdown*/
+
+  /* Carousel*/
+  #carousel
+    max-width: 876px
+    position: relative
+    margin: auto
+  .slideshow
+    display: none
+  /*Next & previous*/
+  .prev, .next
+    cursor: pointer
+    position: absolute
+    top: 50%
+    width: auto
+    margin-top: -22px
+    padding: 16px
+    color: white
+    font-weight: bold
+    font-size: 18px
+    transition: 0.6s ease
+    border-radius: 0px 3px 3px 0px
+  /*Next button to > right*/
+  .next
+    right: 0
+    border-radius: 3px 0px 0px 3px
+  /* Psudo : buttons*/
+  .prev:hover, .next:hover
+    background-color: rgba(0,0,0,0.8)
+  /*Capiton*/
+  .capiton
+    color: #f5f5f5
+    font-weight: bold
+    font-family: opensans, georgia
+    font-size: 1em
+    text-align: center
+    position: absolute
+    padding: 8px 12px
+    width: 100%
+    margin-left: 20%
+    bottom: 8px
+
+  /* Indicators*/
+  #indicator
+    text-align: center
+  .indicator
+    background-color: #bbb
+    border-radius: 50%
+    transition: background-color 0.6 ease
+    display: inline-block
+    margin: 0px 2px
+    width: 13px
+    height: 13px
+    cursor: pointer
+
+  .active, .indicator:hover
+    background-color: #f5f5f5
+  /*Animation : Fading*/
+  .fade
+    -webkit-animation-name: fade
+    -webkit-animation-duration: 1.5s
+    animation-name: fade
+    animation-duration: 1.5s
+  @-webkit-keyframes fade
+    from
+      opacity: .4
+    to
+      opacity: 1
+  @keyframes fade
+    from
+      opacity: .4
+    to
+      opacity: 1
+  .img
+    margin: 0px 0px 0px 20px
+    display: inline-block
+    width: 100%
+    height: 225px
+
+  hr.hr
+    border: 0px
+    width: 90px
+    height: 1px
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+  .des
+    padding: 15px
+    border: none
+    font-family: 'Open Sans', sans-serif
+    text-align: center
+  .design
+    width: 100%
+    background-color: #eff0f1
+    position: relative
+    padding-bottom: 30px
+    z-index: 9

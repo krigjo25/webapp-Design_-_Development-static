@@ -1,0 +1,72 @@
+<!-- include "includes/metadata.html" -->
+ <link href="assets/css/vector.css" rel="stylesheet" type="text/css" media="screen">
+<script src="assets/js/vector.js"></script>
+<script src="assets/js/lightbox.js"></script>
+ <!-- title "K-design | Vector" -->
+</head>
+<body>
+<!-- include "includes/header.html" -->
+<main class="design">
+<!--Lightbox-->
+<!-- The Image Table -->
+  <div class="row">
+    <div class="column">
+    <img src="assets/portfolio/vector/Owl.svg" onclick="modalOpen(); currentSwitch(1)" class="cursor hover-shadow">
+    </div>
+    <!--<div class="column">
+    <img src="" onclick="Openmodal();currentModal(2)" class="cursor hover-shadow">
+    </div>
+    <div class="column">
+    <img src="" onclick="Openmodal();currentModal(3)" class="cursor hover-shadow">
+    </div>
+        <div class="column">
+    <img src="" onclick="Openmodal();currentModal(4)" class="cursor hover-shadow">
+    </div-->
+  </div>
+<!-- End of the Table-->
+<!-- Modal box -->
+<div id="lightbox" class="modal">
+<span class="close" onclick="modalClose()">×</span>
+<div class="modal-graphics">
+
+  <div class="modalSlide">
+    <div class="nr"> 1 / 4</div>
+    <img src="assets/portfolio/vector/Owl.svg" width="25%">
+  </div>
+
+  <div class="modalSlide">
+    <div class="nr"> 2 / 4</div>
+    <img src="assets/portfolio/vector/Owl.svg" width="25%">
+  </div>
+
+  <div class="modalSlide">
+    <div class="nr"> 3 / 4</div>
+    <img src="assets/portfolio/vector/Owl.svg" width="25%">
+  </div>
+<!--End of the modal box-->
+
+<!-- Previous & next buttons-->
+  <a class="prev" onclick="toggleSwitch(-1)">❮</a>
+  <a class="next" onclick="toggleSwitch(1)">❯</a>
+  
+  <div class="caption">
+    <p id="caption"></p>
+  </div>
+
+  <div class="column">
+    <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(1)" alt="Paper Owl">
+    </div>
+    <div class="column">
+      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(2)" alt="Triangle Owl">
+    </div>
+     <div class="column">
+      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(3)" alt="Circled Owl">
+    </div>
+     <div class="column">
+      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(4)" alt="X Owl">
+    </div>
+  </div>
+</div>
+
+</main>
+<!-- include "includes/footer.html" -->

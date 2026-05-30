@@ -1,0 +1,57 @@
+@charset "utf-8"
+/* CSS Document */
+
+/* News Article */
+#octagon
+  width: 100px
+  height: 100px
+  background: red
+  z-index: 11
+  position: relative
+
+#octagon:before
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  border-bottom: 29px solid red
+  border-left: 29px solid #eee
+  border-right: 29px solid #eee
+  width: 42px
+  height: 0
+
+#octagon:after
+  content: ""
+  position: absolute
+  bottom: 0
+  left: 0
+  border-top: 29px solid red
+  border-left: 29px solid #eee
+  border-right: 29px solid #eee
+  width: 42px
+  height: 0
+.news
+  font-family: 'Open Sans', sans-serif
+  display: none
+  padding: 20px 20px
+  line-height: 56px
+  border: 1px groove #ccc
+  border-top: none
+  text-justify: distribute
+  text-align: center
+  margin-bottom: 0.850em
+  border-bottom-left-radius: 20px
+  border-bottom-right-radius: 20px
+  border-top-right-radius: 20px
+  -o-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+.timerstamp
+  font-family: "Open Sans" Sans-serif
+  font-weight: 300
+.post
+  font-family: "Open Sans" Sans-serif
+  font-style: italic
+  display: inline-block
+

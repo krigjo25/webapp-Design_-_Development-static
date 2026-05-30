@@ -1,0 +1,70 @@
+@charset "utf-8"
+@media screen and (min-width: 480px)
+  h3
+    font-family: Awery
+    color: #117
+  /*  NEWS ARTICLE */
+.read-article
+  display: none
+  /* Hides the article before show more is clicked */
+.hidden-more
+  opacity: 0
+  color: #000000
+  font-family: open-sans
+  font-weight: normal
+  max-height: 0
+  font-size: 1em
+  transition: .25s ease
+.read-article:checked ~ .read-more-wrap .hidden-more
+  opacity: 1
+  z-index: 100
+  font-size: inherit
+  max-height: 999em
+
+.read-article ~ .toggle:before
+  content: 'Read more'
+
+.read-article:checked ~ .toggle:before
+  content: 'Read less'
+
+.toggle
+  cursor: pointer
+  display: inline-block
+  padding: 0 .1em
+  color: #666
+  font-size: .9em
+  line-height: 2
+  margin-left: 6%
+  border: 1px solid #ddd
+  border-radius: 25em
+.news
+  background-color: #FAFAFA
+  font-family: Awery
+  color: #117
+  font-weight: bold
+  font-size: 1.125em
+  margin-left: 20%
+  max-width: 500px 
+  border: 1px thick #FBFBFB
+  border-radius: 2em
+  -o-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
+
+.by
+  position: relative
+  left: 2%
+  font-family: 'Open Sans', Sans-serif
+  font-style: italic
+  font-weight: normal
+  font-size: 0.8250em
+  color: #cccccc
+  display: inline-block
+.summary
+  color: #000000
+  font-family: open-sans
+  font-weight: normal
+  font-size: 0.8250em
+  position: relative
+  left: 1%

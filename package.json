@@ -1,0 +1,20 @@
+{
+  "name": "webapp-design-development-static",
+  "version": "1.0.0",
+  "description": "Static webapp",
+  "main": "dist/index.html",
+  "scripts": {
+    "build": "npx tsx scripts/build.ts",
+    "start": "http-server dist -o /index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.30",
+    "http-server": "^14.1.1",
+    "sass": "^1.77.4",
+    "tsx": "^4.22.3",
+    "typescript": "^5.4.5"
+  }
+}

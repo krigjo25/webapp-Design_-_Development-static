@@ -1,0 +1,90 @@
+@charset "utf-8"
+/* CSS Document */
+/*Chip*/
+h3
+  color: #D90003
+
+.chip
+  display: inline-block
+  font-family: 'Open Sans', sans-serif
+  padding: 0px 25px
+  height: 50px
+  font-family: open-sans
+  font-size: 1em
+  line-height: 50px
+  border-radius: 25px
+  background-color: #ccc
+  cursor: pointer
+
+.chip-content
+  display: none
+  position: absolute
+  background-color: #FAFAFA
+  font-family: 'Open Sans', sans-serif
+  padding: 0px 25px
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+  border-radius: 25px
+
+.chip:hover .chip-content
+  display: inline-block
+  z-index: 11
+  font-family: 'Open Sans', sans-serif
+  background-color: #f1f1f1
+
+
+.chip img
+  float: left
+  margin: 0 10px 0 -25px
+  height: 50px
+  width: 50px
+  border-radius: 50%
+
+.design
+  width: 100%
+  background-color: #eff0f1
+  position: relative
+  z-index: 10
+  padding: 10em 1em
+  margin: 0px 0px
+/*Feedback*/
+legend
+  font-family: "Opensans", sans-serif
+  font-weight: 500
+  font-size: 2em
+label
+  font-family: "Opensans", sans-serif
+  font-size: 1em
+  margin: 1em
+input
+  font-family: "Opensans", sans-serif
+  font-size: 1em
+input[type="text"]
+
+  border-left: none
+  border-right: none
+  border-top: none
+  border-bottom: 1px groove black
+  width: 50%
+  height: 2em
+input[type=text]:focus
+  border: 1px solid lightblue
+
+input[type=checkbox]:focus
+  border: 1px solid lightblue
+textarea:focus
+  border: 1px solid lightblue
+
+
+input[type=submit]
+  padding: 10px
+  background-color: lightgreen
+input[type=submit]:hover
+  background-color: green
+input[type=reset]
+  padding: 10px
+input[type=reset]:hover
+  background-color: red
+textarea
+  line-height: 2em
+  font-family: "Opensans", sans-serif
+  font-size: 1em

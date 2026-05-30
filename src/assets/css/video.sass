@@ -1,0 +1,514 @@
+@charset "utf-8"
+/* CSS Document designed by Project media  */
+/*               The Media player       */
+@import url(http://projectmedia.net23.net/pm/fonts/font-awesome/font/font-awesome.min.css)
+
+*
+  box-sizing: border-box
+
+#media_player
+  width: 238px
+  height: 299px
+  position: relative
+  font: normal 10px / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
+  background: #111111
+  margin-left: 3.5em
+  color: #DAE7ED
+  top: 1.5em
+
+#media_player video
+  width: 228px
+  height: 210px
+  margin-left: 5px
+  position: relative
+  z-index: 1
+  display: block
+  top: 13px
+
+
+[id=playback]
+  width: 98%
+  vertical-align: -0.2em
+  background: #DAE7ED
+  height: 12px
+  display: inline-block
+  border: none
+
+[id=duration]::before
+  content: ' / '
+
+[id=elapsed], [id=duration]
+  display: inline-block
+  text-align: right
+  padding-top: 1px
+
+[id=video_time]
+  width: 100%
+  margin-left: 1%
+  position: absolute
+  top: 216px
+
+[id=video_seek]
+  position: absolute
+  z-index: 3
+  width: 99%
+  left: 0px
+  top: 216px
+
+
+[id=seek]
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  appearance: none
+  width: 100%
+  position: absolute
+  left: 0
+  outline: none
+  padding: 2px 0 /* For Internet Explorer's sake */
+  height: 10px
+  background-color: transparent
+
+[id=play], [id=pause], label[for=volume]
+  font-family: 'FontAwesome'
+  font-size: 2em
+
+label[for=volume]
+  font-size: 2.8em
+  display: inline-block
+  vertical-align: baseline
+
+
+#media_player button
+  text-align: center
+  width: 42px
+  height: 41px
+  background: #222
+  border: 0
+  padding: 0
+  color: #DAE7ED
+  cursor: pointer
+
+#media_player button:hover
+  outline: none
+  color: #410F52
+#media_player button:focus
+  outline: none
+
+[id=video_controls]
+  border-top: 20px solid #222
+  margin-top: 28px
+
+[id=volume]
+  width: 100px
+  margin-top: -13px
+
+[id=video_controls] span label
+  display: inline-block
+  margin-top: -15px
+
+// =============================================================
+// In this section we are using experimental, browser-specific
+// properties. Because they're experimental, behavior may change.
+// To date, however, they're the only way to create custom controls.
+// =============================================================
+
+[type="range"]
+  -webkit-appearance: none
+  vertical-align: middle
+
+/* Webkit-only progress bar styles. */
+[id=playback]::-webkit-progress-bar
+  background-color: #741b93
+  opacity: 0.5
+
+[id=playback]::-webkit-progress-value
+  background-color: #410F52
+  opacity: 1
+
+[id=seek]::-webkit-slider-thumb,
+[id=volume]::-webkit-slider-thumb
+  -webkit-appearance: none
+  width: 1px
+  height: 15px
+  border-radius: 10%
+  background: #FF7014
+  margin-top: -4px
+
+[id=volume]::-webkit-slider-thumb
+  margin-top: -4px
+  width: 10px
+  height: 10px
+
+[id=volume]::-webkit-slider-runnable-track
+  background: #DAE7ED
+  height: 2px
+  margin-top: 0px
+
+
+
+/* Firefox-only progress bar styles */
+progress[id=playback]
+  -moz-border-top-colors: rgba(0,0,0,0)
+  -moz-border-right-colors: rgba(0,0,0,0)
+  -moz-border-bottom-colors: rgba(0,0,0,0)
+  -moz-border-left-colors: rgba(0,0,0,0)
+  background: #741b93
+
+
+/* Firefox-only range bar styles */
+
+::-moz-range-track
+  border-top: none
+  border-bottom: none
+  border: 0
+
+[id=seek]::-moz-range-track
+  background: transparent
+
+[id=volume]::-moz-range-track
+  background: #4B4F52
+
+::-moz-range-thumb
+  -moz-appearance: none !important
+  border: 0
+  border-radius: 16%
+  background-image: none
+  background-color: #FF7014
+
+[id=seek]::-moz-range-thumb
+  padding: 4px
+
+::-moz-progress-bar
+  background: #410F52
+
+/* Microsoft-only range bar styles */
+::-ms-thumb
+  background-image: snone
+  background-color: #FF7014
+  padding: 2px 0
+  border-radius: 100%
+  vertical-align: bottom
+
+
+[id=volume]::-ms-track
+  background-color: #666
+  height: 10px
+  margin: 17px 0 0 5px
+  height: 3px
+  border: 1px solid #222
+
+[id=playback]::-ms-fill
+  background: #410F52
+
+[id=playback]::-ms-ticks-after
+  color: transparent
+
+[id=seek]::-ms-track,
+[id=seek]::-ms-fill-lower,
+[id=seek]::-ms-fill-upper,
+[id=volume]::-ms-fill-upper,
+::-ms-ticks-after,
+::-ms-ticks-before,
+[id=volume]::-ms-ticks-after,
+[id=volume]::-ms-ticks-before
+  background: transparent
+  border: 0
+  color: transparent
+
+[id=seek]::-ms-thumb
+  border-color: #FF7014
+  border-width: 2px
+  border-style: solid
+  margin-top: -5px
+  padding-bottom: 10px
+[id=volume]::-ms-fill-lower
+  background: transparent
+video
+
+  width: 350px
+  height: 200px
+
+
+/*                    Description                     */
+hr.style-video
+  border: 0px
+  width: 90px
+  height: 1px
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+
+
+.des
+  font-family: "Open sans", Georgia, Sans-serif
+  width: 200px
+  padding: 5px
+  border: none
+  display: block
+  margin-left: 13%
+  margin-top: 1.5em
+  text-align: center
+.error
+  font-family: "Open Sans", georgia, Sans-serif
+.design
+  width: 100%
+  background-color: #eff0f1
+  position: relative
+  z-index: 10
+  padding-bottom: 30px 20px
+/* Media Query*/
+@media only screen and (min-width: 1080px)
+
+  #media_player
+    width: 360px
+    height: 386px
+    margin-left: 16px
+    position: relative
+    font: normal 10px / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
+    background: #111111
+    color: #DAE7ED
+    top: 1.5em
+
+  #media_player video
+    width: 350px
+    height: 300px
+    margin-top: 10px
+    margin-left: 5px
+    position: relative
+    z-index: 1
+    display: block
+
+  /* Progress bar, background before : track*/
+  [id=playback]
+    width: 99%
+    vertical-align: -0.2em
+    background: #DAE7ED
+    height: 10px
+    display: inline-block
+    border: none
+
+  [id=duration]::before
+    content: ' / '
+  /* Start        End of v*/
+  [id=elapsed], [id=duration]
+    display: inline-block
+    text-align: right
+    padding-top: 1px
+
+  [id=video_time]
+    width: 100%
+    margin-left: 1%
+    position: absolute
+    top: 313px
+
+  [id=video_seek]
+    position: absolute
+    z-index: 3
+    width: 99%
+    left: 0px
+    top: 301px
+
+
+  [id=seek]
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    appearance: none
+    width: 100%
+    position: absolute
+    left: 0
+    outline: none
+    padding: 2px 0 /* For Internet Explorer's sake */
+    height: 37px
+    background-color: transparent
+
+  [id=play], [id=pause], label[for=volume]
+    font-family: 'FontAwesome'
+    font-size: 2em
+
+  label[for=volume]
+    font-size: 2.8em
+    display: inline-block
+    vertical-align: baseline
+
+  /* The play / pause button for the media player*/
+  #media_player button
+    text-align: center
+    width: 42px
+    height: 41px
+    background: #222
+    border: 0
+    padding: 0
+    color: #DAE7ED
+    cursor: pointer
+
+  #media_player button:hover
+    outline: none
+    color: #410F52
+  #media_player button:focus
+    outline: none
+  /*  End of the play pause button */
+  [id=video_controls]
+    border-top: 20px solid #222
+    margin-top: 25px
+
+  [id=volume]
+    width: 100px
+    margin-top: -13px
+
+  [id=video_controls] span label
+    display: inline-block
+    margin-top: -15px
+
+  // =============================================================
+  // In this section we are using experimental, browser-specific
+  // properties. Because they're experimental, behavior may change.
+  // To date, however, they're the only way to create custom controls.
+  // =============================================================
+
+  [type="range"]
+    -webkit-appearance: none
+    vertical-align: middle
+  /*  Chrome, Opera & Safari */
+  /* Webkit-only progress bar styles. */
+  [id=playback]::-webkit-progress-bar
+    background-color: #DAE7ED
+    opacity: 0.5
+
+  [id=playback]::-webkit-progress-value
+    background-color: #0475DF
+    opacity: 1
+  /* Seeker slider*/
+
+  [id=seek]::-webkit-slider-thumb,
+  [id=volume]::-webkit-slider-thumb
+    -webkit-appearance: none
+    width: 1px
+    height: 14px
+    background: #FF7014
+    margin-top: -4px
+
+  [id=volume]::-webkit-slider-thumb
+    margin-top: -4px
+    width: 10px
+    border-radius: 100%
+    height: 10px
+
+  [id=volume]::-webkit-slider-runnable-track
+    background: #DAE7ED
+    height: 2px
+    margin-top: 0px
+    opacity: 0.6
+
+  /* Mozilla firefox */
+
+  /* Firefox-only progress bar styles */
+  progress[id=playback]
+    -moz-border-top-colors: rgba(0,0,0,0)
+    -moz-border-right-colors: rgba(0,0,0,0)
+    -moz-border-bottom-colors: rgba(0,0,0,0)
+    -moz-border-left-colors: rgba(0,0,0,0)
+    background: #DAE7ED
+    opacity: 0.5
+
+
+  /* Firefox-only range bar styles */
+
+  ::-moz-range-track
+    border-top: none
+    border-bottom: none
+    border: 0
+
+  [id=seek]::-moz-range-track
+    background: transparent
+  /*Volume range background*/
+  [id=volume]::-moz-range-track
+    background: #DAE7ED
+    opacity: 0.5
+  /*Range dots*/
+  ::-moz-range-thumb
+    -moz-appearance: none !important
+    border: 0px
+    width: 3px
+    left: -5px !important
+    cursor: pointer
+    background-image: none
+    background-color: #f5f5f5
+
+  [id=seek]::-moz-range-thumb
+    padding: 0px
+  /* progress after */
+  ::-moz-progress-bar
+    background: #0465C2
+  /* Microsoft Explorer*/
+  /* Microsoft-only range bar styles */
+  ::-ms-thumb
+    background-image: none
+    background-color: #FF7014
+    padding: 2px 0px
+    border-radius: 100%
+    vertical-align: bottom
+
+
+  [id=volume]::-ms-track
+    background-color: #666
+    height: 10px
+    margin: 17px 0 0 5px
+    height: 3px
+    border: 1px solid #222
+
+  [id=playback]::-ms-fill
+    background: #410F52
+
+  [id=playback]::-ms-ticks-after
+    color: transparent
+
+  [id=seek]::-ms-track,
+  [id=seek]::-ms-fill-lower,
+  [id=seek]::-ms-fill-upper,
+  [id=volume]::-ms-fill-upper,
+  ::-ms-ticks-after,
+  ::-ms-ticks-before,
+  [id=volume]::-ms-ticks-after,
+  [id=volume]::-ms-ticks-before
+    background: transparent
+    border: 0
+    color: transparent
+  /*Seeker thumb*/
+  [id=seek]::-ms-thumb
+    border-color: #FF7014
+    border-width: 0px
+    margin-top: -7px
+
+    padding-bottom: 10px
+  [id=volume]::-ms-fill-lower
+    background: transparent
+  video
+
+    width: 350px
+    height: 200px
+
+
+  /*                    Description                     */
+  hr.style-video
+    border: 0px
+    width: 90px
+    height: 1px
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+
+
+  .des
+    font-family: "Open sans", Georgia, Sans-serif
+    width: 200px
+    padding: 5px
+    border: none
+    display: block
+    margin-left: 6%
+    margin-top: 1.5em
+    text-align: center
+  .error
+    font-family: "Open Sans", georgia, Sans-serif
+  .design
+    width: 100%
+    background-color: #eff0f1
+    position: relative
+    z-index: 9

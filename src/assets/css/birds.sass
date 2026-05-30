@@ -1,0 +1,488 @@
+@charset "utf-8"
+
+/******************* Kriss design*******************************/
+
+/* Light Box */
+.cursor
+  cursor: pointer
+.row > .column
+  padding: 0px 8px
+.row:after
+  content: ""
+  display: table
+  clear: both
+.column
+  float: left
+  margin: 10px
+  width: 25%
+/*modal the background*/
+
+.modal
+  display: none
+  position: fixed
+  z-index: 10
+  padding-top: 100px
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  overflow: auto
+  background-color: #111111
+/* Content of the modal*/
+.modal-graphics
+  position: relative
+  background-color: transparent
+  margin: auto
+  padding: 0
+  width: 90%
+  max-width: 360px
+.close
+  color: #ffffff
+  position: absolute
+  top: 10px
+  right: 25px
+  font-size: 35px
+  font-weight: bold
+.close:hover, .close:focus
+  color: #f5f5f5
+  text-decoration: none
+  cursor: pointer
+.nr
+  color: #f5f5f5
+  font-size: 1em
+  padding: 8px 12px
+  position: absolute
+  top: 0
+.modalSlide
+  display: none
+  width: 350%
+  left: 22px
+  position: relative
+/*Next / Prev*/
+.prev, .next
+  cursor: pointer
+  position: absolute
+  top: 50%
+  width: auto
+  padding: 1em
+  margin-top: -50px
+  color: #ffffff
+  font-weight: bold
+  font-size: 1.2em
+  -webkit-transition: 0.6 ease
+  -moz-transition: 0.6 ease
+  -o-transition: 0.6 ease
+  transition: 0.6 ease
+  border-radius: 0px 3px 3px 0px
+  user-select: none
+  -webkit-user-select: none
+.next
+  right: 406px
+  border-radius: 3px 0px 0px 3px
+.prev
+  left: 412px
+.prev:hover, .next:hover
+  background-color: rgba(0, 0, 0, 0.8)
+.caption
+  text-align: right
+  font-family: awery
+  background-color: transparent
+  padding: 2px 16px
+  color: #f5f5f5
+  z-index: 11
+img
+  margin-bottom: -4px
+.ms
+  opacity: 0.6
+  width: 100%
+  left: 350px
+  display: inline-block
+.active, .ms:hover
+  opacity: 1
+img.hover-shadow
+  transition: 0.3s
+.hover-shadow:hover
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+/* End of Light Box */
+/*Dropdown*/
+p
+  padding: 0px
+  line-height: 2px
+  text-align: center
+  font-family: awery
+  font-size: 1em
+  font-weight: bold
+/* Navigation menu for graphics */
+#navigation
+  background-color: transparent
+  padding: 10px
+  position: relative
+  top: 4px
+  height: 20%
+  left: 41px
+
+/* Dropdown Celebrations*/
+.celebrations
+  position: relative
+  display: inline-block
+  top: -10px
+  left: -10px
+  z-index: 10
+.cele_button
+  background-color: #cccccc
+  background-image: linear-gradient(#808080,#d3d3d3)
+  color: #000000
+  padding: 10px
+  font-size: 0.50em
+  font-family: Opensans, georgia
+  border: none
+  border-right-style: solid
+  border-right-width: 1px
+  border-right-color: #000000
+  cursor: pointer
+  border-top-left-radius: 20px
+  border-bottom-left-radius: 20px
+.cele_button:after
+  content: ''
+  position: absolute
+  top: 0px
+  left: -1px
+  width: calc(141% - 0px)
+  height: 50%
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+  border-top-left-radius: 20px
+/*Dropdown Celebrations End*/
+
+/* Dropdown for misc*/
+.misc
+  position: relative
+  display: inline-block
+  top: -10px
+  left: -14px
+  z-index: 10
+.misc_button /* Drop down button for Season*/
+  background: #cccccc /*for compatibility with older browsers*/
+  background-image: linear-gradient(#808080,#d3d3d3)
+  color: black
+  padding: 10px
+  font-size: 0.50em
+  font-family: Opensans, georgia
+  border: none
+  border-right-style: solid
+  border-right-width: 1px
+  border-right-color: #000000
+  cursor: pointer
+.misc_button:after
+  content: ''
+  position: absolute
+  top: 0px
+  left: 0px
+  width: calc(100% - 1px)
+  height: 50%
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+
+.season
+  position: relative
+  display: inline-block
+  top: -10px
+  left: -18px
+  z-index: 10
+.season_button /* Drop down button for Season*/
+  background: #cccccc /*for compatibility with older browsers*/
+  background-image: linear-gradient(#808080,#d3d3d3)
+  color: black
+  padding: 10px
+  font-size: 0.50em
+  font-family: Opensans, georgia
+  border: none
+  border-right-style: solid
+  border-right-width: 1px
+  border-right-color: #000000
+  cursor: pointer
+.season_button:after
+  content: ''
+  position: absolute
+  top: 0px
+  left: 0px
+  width: calc(100% - 1px)
+  height: 50%
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+
+/*End of Season- dropdown*/
+
+/* Dropdown for Zoology*/
+.zoo_dropdown
+  position: relative
+  display: inline-block
+  top: -10px
+  left: -22px
+  z-index: 10
+.zoo_dropdown:hover .zoo_content
+  display: block
+.zoo_button
+  background: #cccccc /*for compatibility with older browsers*/
+  background-image: linear-gradient(#808080,#d3d3d3)
+  color: black
+  padding: 10px
+  font-size: 0.50em
+  font-family: Opensans, georgia
+  border: none
+  border-top-right-radius: 20px
+  border-bottom-right-radius: 20px
+  cursor: pointer
+.zoo_button:after
+  content: ''
+  position: absolute
+  top: 0px
+  left: 0px
+  width: calc(101% - 1px)
+  height: 50%
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+  border-top-right-radius: 20px
+/*Dropdown Animal End*/
+/*End of Dropdown*/
+
+/*Descriptions*/
+.des
+  padding: 15px 0px 0px 25px
+  border: none
+  font-family: 'Open Sans', sans-serif
+  text-align: center
+.design
+  width: 100%
+  background-color: #f5f5f5
+  position: relative
+  z-index: 9
+
+/* Media Query Start*/
+@media only screen and (min-width: 1080px)
+  /* Navigation menu for graphics */
+  /* Light Box */
+  .cursor
+    cursor: pointer
+  .row > .column
+    padding: 0px 8px
+  .row:after
+    content: ""
+    display: table
+    clear: both
+  .column
+    float: left
+    width: 25%
+    margin: 31px
+  /*modal the background*/
+
+  .modal
+    display: none
+    position: fixed
+    z-index: 10
+    padding-top: 100px
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: #111111
+  /* Content of the modal*/
+  .modal-graphics
+    position: relative
+    background-color: transparent
+    margin: auto
+    padding: 0
+    width: 90%
+    max-width: 1200px
+  .close
+    color: #ffffff
+    position: absolute
+    top: 10px
+    right: 25px
+    font-size: 35px
+    font-weight: bold
+  .close:hover, .close:focus
+    color: #f5f5f5
+    text-decoration: none
+    cursor: pointer
+  .nr
+    color: #f5f5f5
+    font-size: 1em
+    padding: 8px 12px
+    position: absolute
+    top: 0
+  .modalSlide
+    display: none
+    position: relative
+    width: 100%
+    left: 453px
+  /*Next / Prev*/
+  .prev, .next
+    cursor: pointer
+    position: absolute
+    top: 50%
+    width: auto
+    padding: 1em
+    margin-top: -50px
+    color: #ffffff
+    font-weight: bold
+    font-size: 1.2em
+    -webkit-transition: 0.6 ease
+    -moz-transition: 0.6 ease
+    -o-transition: 0.6 ease
+    transition: 0.6 ease
+    border-radius: 0px 3px 3px 0px
+    user-select: none
+    -webkit-user-select: none
+  .next
+    right: 406px
+    border-radius: 3px 0px 0px 3px
+  .prev
+    left: 412px
+  .prev:hover, .next:hover
+    background-color: rgba(0, 0, 0, 0.8)
+  .caption
+    text-align: right
+    font-family: awery
+    background-color: transparent
+    padding: 2px 16px
+    color: #f5f5f5
+    z-index: 11
+  img
+    margin-bottom: -4px
+  .ms
+    opacity: 0.6
+  .active, .ms:hover
+    opacity: 1
+  img.hover-shadow
+    transition: 0.3s
+  .hover-shadow:hover
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  #navigation
+    background-color: transparent
+    padding: 10px
+    position: relative
+    top: -50px
+    left: 451px
+    width: 32%
+    height: 20%
+  /* Dropdown Celebrations*/
+  .celebrations
+    position: relative
+    display: inline-block
+    top: -10px
+    left: -10px
+    z-index: 10
+  .cele_button
+    background-color: #cccccc
+    background-image: linear-gradient(#808080,#d3d3d3)
+    color: #000000
+    padding: 10px
+    font-size: 1em
+    font-family: Opensans, georgia
+    border: none
+    border-right-style: solid
+    border-right-width: 1px
+    border-right-color: #000000
+    cursor: pointer
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px
+  .cele_button:after
+    content: ''
+    position: absolute
+    top: 0px
+    left: -1px
+    width: calc(124% - 27px)
+    height: 50%
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+    border-top-left-radius: 20px
+  /*Dropdown Celebrations End*/
+
+  /* Dropdown for misc*/
+  .misc
+    position: relative
+    display: inline-block
+    top: -10px
+    left: -14px
+    z-index: 10
+  .misc_button /* Drop down button for Season*/
+    background: #cccccc /*for compatibility with older browsers*/
+    background-image: linear-gradient(#808080,#d3d3d3)
+    color: black
+    padding: 10px
+    font-size: 1em
+    font-family: Opensans, georgia
+    border: none
+    border-right-style: solid
+    border-right-width: 1px
+    border-right-color: #000000
+    cursor: pointer
+  .misc_button:after
+    content: ''
+    position: absolute
+    top: 0px
+    left: 0px
+    width: calc(124% - 27px)
+    height: 50%
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+
+  /* Dropdown for Seasons */
+  .season
+    position: relative
+    display: inline-block
+    top: -10px
+    left: -18px
+    z-index: 10
+
+  .season_button /* Drop down button for Season*/
+    background: #cccccc /*for compatibility with older browsers*/
+    background-image: linear-gradient(#808080,#d3d3d3)
+    color: black
+    padding: 10px
+    font-size: 1em
+    font-family: Opensans, georgia
+    border: none
+    border-right-style: solid
+    border-right-width: 1px
+    border-right-color: #000000
+    cursor: pointer
+  .season_button:after
+    content: ''
+    position: absolute
+    top: 0px
+    left: 0px
+    width: calc(137% - 27px)
+    height: 50%
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+
+  /* Dropdown for Zoology*/
+  .zoology
+    position: relative
+    display: inline-block
+    top: -10px
+    left: -22px
+    z-index: 10
+  .zoo_button
+    background: #cccccc /*for compatibility with older browsers*/
+    background-image: linear-gradient(#808080,#d3d3d3)
+    color: black
+    padding: 10px
+    font-size: 1em
+    font-family: Opensans, georgia
+    border: none
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
+    cursor: pointer
+  .zoo_button:after
+    content: ''
+    position: absolute
+    top: 0px
+    left: 0px
+    width: calc(136% - 27px)
+    height: 50%
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2))
+    border-top-right-radius: 20px
+  /*Dropdown Animal End*/
+
+  .des
+    padding: 15px 0px 0px 25px
+    border: none
+    font-family: 'Open Sans', sans-serif
+    text-align: center
