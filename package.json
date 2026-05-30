@@ -6,12 +6,14 @@
   "scripts": {
     "build": "npx tsx scripts/build.ts",
     "gen-titles": "tsx src/assets/ts/generate-titles.ts",
+    "start": "npm run build && http-server dist /index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/jquery": "^3.5.30",
+    "@types/node": "^25.9.1",
     "http-server": "^14.1.1",
     "sass": "^1.77.4",
     "tsx": "^4.22.3",
