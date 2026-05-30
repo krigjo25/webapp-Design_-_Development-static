@@ -1,7 +1,10 @@
+/// <reference types="node" />
 import * as fs from 'fs';
 import * as path from 'path';
-
+declare const __dirname: string;
 const srcDir = path.resolve(__dirname, '../../../src');
+
+
 
 function titleFromFile(fileName: string): string {
   const base = path.basename(fileName, '.html');
