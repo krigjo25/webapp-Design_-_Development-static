@@ -99,15 +99,20 @@ function buildDir(src: string, dest: string) {
     } else if (entry.isFile()) {
       const ext = path.extname(entry.name).toLowerCase();
       if (ext === '.sass') {
-        // Compile Sass to CSS in dist/
-        const cssPath = destPath.slice(0, -5) + '.css';
-        try {
-          const result = sass.compile(srcPath);
-          fs.writeFileSync(cssPath, result.css, 'utf8');
-          console.log(`Compiled Sass: ${srcPath} -> ${cssPath}`);
-        } catch (err: any) {
-          console.error(`Sass Compilation Error in ${srcPath}:`, err.message);
-          process.exit(1);
+        // Only compile the main index.sass file; other Sass files are ignored.
+        if (entry.name === 'index.sass') {
+          const cssPath = destPath.slice(0, -5) + '.css';
+          try {
+            const result = sass.compile(srcPath);
+            fs.writeFileSync(cssPath, result.css, 'utf8');
+            console.log(`Compiled Sass: ${srcPath} -> ${cssPath}`);
+          } catch (err: any) {
+            console.error(`Sass Compilation Error in ${srcPath}:`, err.message);
+            process.exit(1);
+          }
+        } else {
+          // Skip other Sass files (do not copy to dist)
+          console.log(`Skipping Sass file ${srcPath}`);
         }
       } else if (ext === '.ts') {
         // TypeScript files will be compiled by tsc, so skip copying them
