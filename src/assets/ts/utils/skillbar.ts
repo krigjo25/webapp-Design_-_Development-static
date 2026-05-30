@@ -56,11 +56,11 @@ class Progress {
 class CircularSkillBar {
     bars: NodeListOf<HTMLElement>;
     tick: number = 25;
-    color: string;
 
-    constructor(elements: string, color: string) {
+
+    constructor(elements: string) {
         this.bars = document.querySelectorAll(elements);
-        this.color = color;
+        // color will be read from each bar's data-color attribute
         if (this.bars.length > 0) {
             this.init();
         }
@@ -71,30 +71,18 @@ class CircularSkillBar {
     }
 
     progress(): void {
-        let index = 0;
-        const firstCanvas = this.bars[0].querySelector("canvas") as HTMLCanvasElement | null;
-        if (firstCanvas) {
-            new Progress(firstCanvas, this.color);
-        }
-
-        const timer = setInterval(() => {
-            index++;
-            if (index >= this.bars.length) {
-                clearInterval(timer);
+        this.bars.forEach((bar) => {
+            const canvas = bar.querySelector("canvas") as HTMLCanvasElement | null;
+            if (!canvas) {
+                console.warn("CircularSkillBar: missing canvas in bar", bar);
                 return;
             }
-
-            const canvas = this.bars[index].querySelector("canvas") as HTMLCanvasElement | null;
-            if (canvas) {
-                new Progress(canvas, this.color);
-            }
-        }, this.tick * 100);
+            const color = bar.getAttribute("data-color") || "#FE4100"; // fallback color
+            new Progress(canvas, color);
+        });
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    new CircularSkillBar("#bars .webdesign", "#FE4100"); // blood Orange
-    new CircularSkillBar("#bars .program", "#000000");   // Blue/Black
-    new CircularSkillBar("#bars .db", "#d30000");        // Red
-    new CircularSkillBar("#bars .graphics", "#000000");  // Black
+    new CircularSkillBar("#bars div[data-percent]");
 });
