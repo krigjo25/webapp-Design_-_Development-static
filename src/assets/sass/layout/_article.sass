@@ -8,14 +8,14 @@
   color: #333333
   font-family: 'Open Sans', sans-serif
   font-weight: normal
-  max-height: 0
+  max-block-size: 0
   font-size: 1em
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1)
   overflow: hidden
 
 .read-article:checked ~ .read-more-wrap .hidden-more
   opacity: 1
-  max-height: 20rem
+  max-block-size: 20rem
   margin-top: 1rem
 
 .read-article ~ .toggle:before
@@ -30,11 +30,11 @@
   align-items: center
   gap: 2.5rem
   padding: 3rem 1.5rem
-  max-width: 750px
+  max-inline-size: 750px
   margin: 0 auto
 
 .news
-  width: 100%
+  inline-size: 100%
   background: rgba(255, 255, 255, 0.8)
   backdrop-filter: blur(12px)
   -webkit-backdrop-filter: blur(12px)
@@ -101,7 +101,7 @@
     transition: all 0.25s ease
     margin-top: 1rem
     background: transparent
-    width: fit-content
+    inline-size: fit-content
 
     &:hover
       background: #0ca888
