@@ -8,66 +8,66 @@
 <body>
 
 <main class="design">
-<!--Lightbox-->
+<!-- lightbox -->
 <!-- The Image Table -->
-  <div class="row">
-    <div class="column">
-    <img src="assets/portfolio/vector/Owl.svg" onclick="modalOpen(); currentSwitch(1)" class="cursor hover-shadow">
-    </div>
-    <div class="column">
-    <img src="" onclick="Openmodal();currentModal(2)" class="cursor hover-shadow">
-    </div>
-    <div class="column">
-    <img src="" onclick="Openmodal();currentModal(3)" class="cursor hover-shadow">
-    </div>
-        <div class="column">
-    <img src="" onclick="Openmodal();currentModal(4)" class="cursor hover-shadow">
-    </div>
-  </div>
+  <section class="row">
+    <figure class="column">
+    <img src="assets/portfolio/vector/Owl.svg" onclick="modalOpen(); currentSwitch(1)" class="cursor hover-shadow" alt="Owl">
+    </figure>
+    <figure class="column">
+    <img src="" onclick="Openmodal();currentModal(2)" class="cursor hover-shadow" alt="Vector 2">
+    </figure>
+    <figure class="column">
+    <img src="" onclick="Openmodal();currentModal(3)" class="cursor hover-shadow" alt="Vector 3">
+    </figure>
+    <figure class="column">
+    <img src="" onclick="Openmodal();currentModal(4)" class="cursor hover-shadow" alt="Vector 4">
+    </figure>
+  </section>
 <!-- End of the Table-->
 <!-- Modal box -->
-<div id="lightbox" class="modal">
+<section id="lightbox" class="modal">
 <span class="close" onclick="modalClose()">×</span>
 <div class="modal-graphics">
 
-  <div class="modalSlide">
+  <figure class="modalSlide">
     <div class="nr"> 1 / 4</div>
-    <img src="assets/portfolio/vector/Owl.svg" width="25%">
-  </div>
+    <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 1">
+  </figure>
 
-  <div class="modalSlide">
+  <figure class="modalSlide">
     <div class="nr"> 2 / 4</div>
-    <img src="assets/portfolio/vector/Owl.svg" width="25%">
-  </div>
+    <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 2">
+  </figure>
 
-  <div class="modalSlide">
+  <figure class="modalSlide">
     <div class="nr"> 3 / 4</div>
-    <img src="assets/portfolio/vector/Owl.svg" width="25%">
-  </div>
+    <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 3">
+  </figure>
 <!--End of the modal box-->
 
 <!-- Previous & next buttons-->
   <a class="prev" onclick="toggleSwitch(-1)">❮</a>
   <a class="next" onclick="toggleSwitch(1)">❯</a>
   
-  <div class="caption">
+  <figcaption class="caption">
     <p id="caption"></p>
-  </div>
+  </figcaption>
 
-  <div class="column">
+  <figure class="column">
     <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(1)" alt="Paper Owl">
-    </div>
-    <div class="column">
+    </figure>
+    <figure class="column">
       <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(2)" alt="Triangle Owl">
-    </div>
-     <div class="column">
+    </figure>
+     <figure class="column">
       <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(3)" alt="Circled Owl">
-    </div>
-     <div class="column">
+    </figure>
+     <figure class="column">
       <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(4)" alt="X Owl">
-    </div>
+    </figure>
   </div>
-</div>
+</section>
 
 </main>
 <!-- include "footer" -->
