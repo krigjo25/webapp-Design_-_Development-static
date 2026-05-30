@@ -1,99 +1,174 @@
 @charset "utf-8"
-/* Style the list */
+
+/* Resets & Base styles */
 *
   box-sizing: border-box
+
 h3
-  font-size: 0.6em
-  font-weight: bolder
-  -webkit-margin-before: 1em
-  -webkit-margin-after: 1em
-  -webkit-margin-start: 0px
-  -webkit-margin-end: 0px
-  font-family: "Open Sans", Georgia, sans-serif
+  font-size: 1em
+  font-weight: bold
+  font-family: "Open Sans", sans-serif
+  margin: 0
 
 .background
   background-color: #ffffff
   color: #000000
-.border
-  border: 1px solid #000000
-  padding: 15px
-  width: 150px
-  border-bottom-right-radius: 50px
-  border-bottom-left-radius: 50px
-/*Image*/
+
+/* About Us Layout Container */
+.about-container
+  max-width: 1000px
+  margin: 0 auto
+  padding: 3rem 1.5rem
+  display: flex
+  flex-direction: column
+  gap: 3rem
+
+.about-hero
+  display: flex
+  flex-direction: column
+  gap: 2.5rem
+  align-items: center
+
+  @media only screen and (min-width: 768px)
+    flex-direction: row
+    align-items: stretch
+
+/* Modernized Designer Avatar Card */
 .instadesign
-  left: 200px
-  width: 148px
   position: relative
-  transition: 1.5s ease
-  box-shadow: 0 -10px 84px 0 rgba(0,0,0,0.2)
-.instadesign:hover .overlay
-  opacity: 1
-.imgdesign
-  display: block
-  width: 100%
-  height: auto
-.overlay
-  top: 0
-  left: 0
-  right: 0
-  bottom: 0
-  opacity: 0
-  width: 150px
-  height: 269px
-  position: absolute
-  transition: 1.5s ease
-  background-color: #000000
-.capiton
-  white-space: nowrap
-  color: #ffffff
-  font-size: 0.5em
-  font-weight: bolder
-  top: 50%
-  left: 50%
-  position: absolute
+  width: 280px
+  height: 380px
   overflow: hidden
-  transform: translate( -50%, -50%)
-  -ms-transform: translate( -50%, -50%)
+  border-radius: 1.5rem
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1)
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease
+  margin: 0
+  flex-shrink: 0
 
+  &:hover
+    transform: translateY(-8px) scale(1.02)
+    box-shadow: 0 25px 50px rgba(0,0,0,0.18)
+
+    .overlay
+      opacity: 1
+      transform: translateY(0)
+
+  .imgdesign
+    width: 100%
+    height: 100%
+    object-fit: cover
+    display: block
+
+  .overlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: linear-gradient(to top, rgba(0, 119, 186, 0.95), rgba(12, 168, 136, 0.8))
+    opacity: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1)
+    transform: translateY(15px)
+    padding: 2rem
+    text-align: center
+
+    .capiton
+      color: #ffffff
+      font-family: 'Open Sans', sans-serif
+      font-size: 1.05em
+      line-height: 1.6
+      font-weight: 500
+
+/* About Description Card */
+.about-description
+  flex-grow: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding: 2.25rem
+  background: rgba(255, 255, 255, 0.75)
+  backdrop-filter: blur(12px)
+  -webkit-backdrop-filter: blur(12px)
+  border: 1px solid rgba(255, 255, 255, 0.4)
+  border-radius: 1.5rem
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05)
+  border-left: 6px solid #0ca888
+  text-align: left
+
+  h2
+    font-family: 'Awery', sans-serif
+    color: #117
+    margin-top: 0
+    margin-bottom: 1rem
+    font-size: 2.2em
+    letter-spacing: -0.01em
+
+  p
+    font-family: 'Open Sans', sans-serif
+    color: #444
+    line-height: 1.7
+    margin-top: 0
+    margin-bottom: 1rem
+    font-size: 0.975em
+
+    &:last-child
+      margin-bottom: 0
+
+/* Skills Canvas Grid */
 #bars
-  left: 32px
-  margin: 1em 0em
-  overflow: hidden
-  max-width: 350px
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 2rem
+  width: 100%
+  margin: 1rem 0
+  padding: 0
   position: relative
+  left: 0
 
-/* skill bar*/
-.bar h3
-  display: block
-  font-size: 1em
-  -webkit-margin-before: 0em
-  -webkit-margin-after: 1em
-  -webkit-margin-start: 0px
-  -webkit-margin-end: 0px
-  font-weight: bold
-  text-align: center
-.bar-circle
-  display: block
-  margin: 0.7em auto
-/* Skills*/
-.webdesign
-  display: inline-block
-  width: 20%
-  text-align: center
-.program
-  display: inline-block
-  width: 20%
-  text-align: center
-.db
-  display: inline-block
-  width: 20%
-  text-align: center
-.graphics
-  display: inline-block
-  width: 20%
-  text-align: center
-/*ToolTip*/
+  @media only screen and (min-width: 768px)
+    grid-template-columns: repeat(4, 1fr)
+
+  article
+    background: rgba(255, 255, 255, 0.7)
+    backdrop-filter: blur(8px)
+    -webkit-backdrop-filter: blur(8px)
+    border: 1px solid rgba(255, 255, 255, 0.4)
+    border-radius: 1.25rem
+    padding: 1.5rem 1rem
+    text-align: center
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    gap: 1rem
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+
+    &:hover
+      transform: translateY(-4px)
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08)
+      border-color: rgba(12, 168, 136, 0.3)
+
+    h3
+      font-family: 'Open Sans', sans-serif
+      font-size: 0.9em
+      font-weight: 700
+      color: #333
+      margin: 0
+      line-height: 1.4
+
+      strong
+        color: #0ca888
+        margin-right: 2px
+
+    .bar-circle
+      display: block
+      margin: 0.7em auto
+
+/* ToolTip styling */
 .tip
   position: relative
   display: inline-block
@@ -128,97 +203,3 @@ h3
 .tip:hover .text
   visibility: visible
   opacity: 1
-/*Media Query*/
-@media only screen and (min-width: 1080px)
-  h3
-    font-size: 0.6em
-    font-weight: bolder
-    -webkit-margin-before: 1em
-    -webkit-margin-after: 1em
-    -webkit-margin-start: 0px
-    -webkit-margin-end: 0px
-    font-family: "Open Sans", Georgia, sans-serif
-  .background
-    background-color: #ffffff
-    color: #000000
-  .border
-    border: 1px solid #000000
-    padding: 15px
-    width: 347px
-    border-bottom-right-radius: 50px
-    border-bottom-left-radius: 50px
-    position: relative
-    left: 73%
-  /*Image*/
-  .instadesign
-    box-shadow: 0 -10px 84px 0 rgba(0,0,0,0.2)
-    transition: 0.5s ease
-    left: 73%
-    position: relative
-    width: 350px
-  .instadesign:hover .overlay
-    bottom: 0
-    height: 100%
-  .imgdesign
-    display: block
-    width: 99%
-    height: auto
-  .overlay
-    position: absolute
-    bottom: 100%
-    left: 0
-    top: 0
-    right: 0
-    background-color: #008CBA
-    overflow: hidden
-    width: 100%
-    height: 0
-    transition: 1.5s ease
-
-  .capiton
-    white-space: nowrap
-    color: #ffffff
-    font-size: 1.20em
-    top: 50%
-    left: 50%
-    position: absolute
-    overflow: hidden
-    transform: translate( -50%, -50%)
-    -ms-transform: translate( -50%, -50%)
-  /* skill bar*/
-  #bars
-    margin: 1em 0em
-    max-width: 56em
-    overflow: hidden
-    position: relative
-    left: 20%
-  .bar h3
-    display: block
-    font-size: 1em
-    -webkit-margin-before: 0em
-    -webkit-margin-after: 1em
-    -webkit-margin-start: 0px
-    -webkit-margin-end: 0px
-    font-weight: bold
-    text-align: center
-  .bar-circle
-    display: block
-    margin: 0.7em auto
-  /* Skills*/
-  .webdesign
-    display: inline-block
-    width: 20%
-    text-align: center
-  .program
-    display: inline-block
-    width: 20%
-    text-align: center
-  .db
-    display: inline-block
-    width: 20%
-    text-align: center
-  .graphics
-    display: inline-block
-    width: 20%
-    text-align: center
-/*End of Media Query*/
