@@ -84,5 +84,5 @@ class CircularSkillBar {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    new CircularSkillBar("#bars div[data-percent]");
+    new CircularSkillBar("#bars [data-percent]");
 });
