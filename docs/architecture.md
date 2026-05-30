@@ -4,6 +4,12 @@ This document provides a high‑level view of the project's structure and runtim
 
 ---
 
+# Architecture Overview
+
+This document provides a high‑level view of the project's structure and runtime flow.
+
+---
+
 ## Folder Layout
 
 ```text
@@ -12,15 +18,18 @@ This document provides a high‑level view of the project's structure and runtim
 │   ├─ index.html           # Main entry point
 │   ├─ about.html           # About page
 │   ├─ animations.html      # Animations showcase
-│   ├─ form/                # Form markup
-│   │   └─ form.html
+│   ├─ form/                # Form markup (now only container HTML)
+│   │   └─ form.html        # Minimal container for TS component
 │   ├─ assets/              # Media assets, Sass, and TS modules
 │   │   ├─ media/           # Images, videos, animations
 │   │   │   ├─ images/…
 │   │   │   ├─ video/…
 │   │   │   └─ animation/…
 │   │   ├─ sass/            # Design‑system styles (Sass)
-│   │   └─ ts/              # TypeScript modules (compiled to JS)
+│   │   └─ ts/              # TypeScript modules (organized by concern)
+│   │       ├─ components/  # UI components (e.g., formComponent.ts)
+│   │       ├─ utils/       # Utility scripts (skillbar.ts, video.ts, etc.)
+│   │       └─ data/        # Static data files (birds.ts, news.ts)
 │   └─ ninjajs/             # Interactive tutorial scripts
 ├─ scripts/                # Build and tooling scripts (e.g., build.ts)
 ├─ node_modules/           # NPM packages (generated, not part of core architecture)
