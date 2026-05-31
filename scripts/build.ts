@@ -50,14 +50,10 @@ function compileHtml(filePath: string): string {
   content = content.replace(includeRegex, (match, filename) => {
     const key = filename.replace(/\.inc\.(?:php|html)$/, '').replace(/\.(?:php|html)$/, '').toLowerCase();
     
-    if (key === 'metadata') {
-      return getMetadata(title, prefix);
-    } else if (key === 'header') {
-      return getHeader(prefix);
-    } else if (key === 'footer') {
-      return getFooter(prefix);
-    } else if (key === 'offline_stylesheets') {
-      return getOfflineStylesheets(prefix);
+    if (key === 'metadata') { return getMetadata(title, prefix);
+    } else if (key === 'header') { return getHeader(prefix, title);
+    } else if (key === 'footer') { return getFooter(prefix);
+    } else if (key === 'offline_stylesheets') { return getOfflineStylesheets(prefix);
     } else {
       console.warn(`Warning: Unknown layout component referenced in include: "${filename}"`);
       return '';

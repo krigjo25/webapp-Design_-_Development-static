@@ -1,9 +1,9 @@
 import { getMetadata } from './metadata';
 
 
-export function getHeader(prefix: string = ''): string {
+export function getHeader(prefix: string = '', title: string = 'Kriss Design / Utvikling'): string {
   return `
-${getMetadata('Kriss Design / Utvikling', prefix)}
+${getMetadata(title, prefix)}
 <body>
   <header class="header">
     <div class="weblogo">
