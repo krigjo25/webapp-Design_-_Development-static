@@ -1,5 +1,3 @@
-// JavaScript Document
-
 /* Toggle show-content */
 var $el: any, 
     $p: any, 

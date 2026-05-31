@@ -1,5 +1,3 @@
-/* This document contains the Javascript of Circle bars */
-
 class Progress {
     total: number;
     color: string;

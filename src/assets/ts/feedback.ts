@@ -1,4 +1,3 @@
-// JavaScript Document
 function formValidation(): boolean | void {
     const form = document.forms.namedItem("feedback") as HTMLFormElement | undefined;
     if (form) {

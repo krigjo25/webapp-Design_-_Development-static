@@ -43,7 +43,7 @@ All notable changes to this project will be documented in this file.
 - Corrected skillbar selector queries and portfolio image paths.
 - Fixed template import paths for the build script.
 
-## [1.0.0] - 2014-05-31
+## [1.0.0] - 2014-05-30
 ### Added
 - Original release of the web application built with plain JavaScript and traditional CSS.
 - Core portfolio sections for vectors, logos, and animations.

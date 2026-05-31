@@ -1,5 +1,3 @@
-// JavaScript Document
-
 const rainbowbutton = document.getElementById("rainbow");
 const rainbow: string[] = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 

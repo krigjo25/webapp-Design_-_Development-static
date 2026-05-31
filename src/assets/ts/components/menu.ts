@@ -1,4 +1,3 @@
-// JavaScript Document
 (function($: JQueryStatic) {
 
   $(".menu-icon").on("click", function(this: HTMLElement) {

@@ -10,7 +10,7 @@
 .modal
   display: none
   position: fixed
-  z-index: 9999 // Increased to be absolutely on top
+  z-index: 10000 // Substantially higher than header/main
   inset: 0
   padding-block-start: 2rem
   overflow: auto
@@ -21,18 +21,18 @@
   margin-inline: auto
   padding: 0
   inline-size: 95%
-  max-inline-size: 50rem // Significantly increased for closer inspection
+  max-inline-size: 50rem
   @include mix.flex-column
   align-items: center
 
 .close
   color: vars.$text-light
-  position: fixed // Changed to fixed to stay visible on scroll
+  position: fixed
   inset-block-start: 1.5rem
   inset-inline-end: 2.5rem
-  font-size: 3.5rem // Slightly larger
+  font-size: 3.5rem
   font-weight: bold
-  z-index: 10000 // Higher than the modal
+  z-index: 10001 // Topmost element
   cursor: pointer
   @include mix.transition-standard(all, 0.3s)
   line-height: 1
