@@ -8,7 +8,7 @@ ${getMetadata(title, prefix)}
   <header class="header">
     <div class="weblogo">
       <a href="${prefix}index.html">
-        <img src="${prefix}assets/media/images/logo/weblogo/k-mobile.png" alt="k-design/development">
+        <img src="${prefix}assets/media/images/logo/weblogo/k-design.png" alt="k-design/development">
       </a>
     </div>
   <nav>

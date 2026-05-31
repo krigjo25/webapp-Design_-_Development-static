@@ -30,16 +30,16 @@ h3
   block-size: 15.625rem
   overflow: hidden
   border-radius: 1.5rem
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1)
+  box-shadow: 0 0.9375rem 2.1875rem rgba(0,0,0,0.1)
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease
   margin-bottom: 0
 
-  @media only screen and (min-width: 768px)
+  @media only screen and (min-inline-size: 48rem)
     block-size: 23.75rem
 
   &:hover
-    transform: translateY(-4px)
-    box-shadow: 0 20px 40px rgba(0,0,0,0.14)
+    transform: translateY(-0.25rem)
+    box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,0.14)
 
   .banner-img
     inline-size: 100%
@@ -71,14 +71,14 @@ h3
         color: #ffffff
         margin: 0 0 0.25rem 0
         letter-spacing: -0.01em
-        text-shadow: 0 2px 4px rgba(0,0,0,0.3)
+        text-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.3)
         font-weight: 700
 
       p
         font-size: 0.95rem
         color: rgba(255, 255, 255, 0.85)
         margin: 0
-        text-shadow: 0 1px 2px rgba(0,0,0,0.2)
+        text-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.2)
 
 /* About Description Card */
 .about-description
@@ -88,11 +88,11 @@ h3
   justify-content: center
   padding: 2.25rem
   background: rgba(255, 255, 255, 0.75)
-  backdrop-filter: blur(12px)
-  -webkit-backdrop-filter: blur(12px)
+  backdrop-filter: blur(0.75rem)
+  -webkit-backdrop-filter: blur(0.75rem)
   border: 0.0625rem solid rgba(255, 255, 255, 0.4)
   border-radius: 1.5rem
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05)
+  box-shadow: 0 0.625rem 1.875rem -0.625rem rgba(0, 0, 0, 0.05)
   border-left: 0.375rem solid #0ca888
   text-align: left
 
@@ -126,18 +126,18 @@ h3
   position: relative
   left: 0
 
-  @media only screen and (min-width: 768px)
+  @media only screen and (min-inline-size: 48rem)
     grid-template-columns: repeat(4, 1fr)
 
   article
     background: rgba(255, 255, 255, 0.7)
-    backdrop-filter: blur(8px)
-    -webkit-backdrop-filter: blur(8px)
+    backdrop-filter: blur(0.5rem)
+    -webkit-backdrop-filter: blur(0.5rem)
     border: 0.0625rem solid rgba(255, 255, 255, 0.4)
     border-radius: 1.25rem
     padding: 1.5rem 1rem
     text-align: center
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04)
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.04)
     display: flex
     flex-direction: column
     align-items: center
@@ -146,8 +146,8 @@ h3
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1)
 
     &:hover
-      transform: translateY(-4px)
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08)
+      transform: translateY(-0.25rem)
+      box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.08)
       border-color: rgba(12, 168, 136, 0.3)
 
     h3
@@ -160,7 +160,7 @@ h3
 
       strong
         color: #0ca888
-        margin-right: 2px
+        margin-right: 0.125rem
 
     .bar-circle
       display: block
@@ -178,7 +178,7 @@ h3
   background-color: #555
   color: #fff
   text-align: center
-  border-radius: 6px
+  border-radius: 0.375rem
   padding: 0.3125rem 0
   position: absolute
   z-index: 1

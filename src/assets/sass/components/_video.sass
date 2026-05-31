@@ -7,30 +7,30 @@
   box-sizing: border-box
 
 #media_player
-  width: 238px
-  height: 299px
+  inline-size: 14.875rem
+  block-size: 18.6875rem
   position: relative
-  font: normal 10px / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
+  font: normal 0.625rem / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
   background: #111111
   margin-left: 3.5em
   color: #DAE7ED
   top: 1.5em
 
 #media_player video
-  width: 228px
-  height: 210px
-  margin-left: 5px
+  inline-size: 14.25rem
+  block-size: 13.125rem
+  margin-left: 0.3125rem
   position: relative
   z-index: 1
   display: block
-  top: 13px
+  top: 0.8125rem
 
 
 [id=playback]
-  width: 98%
+  inline-size: 98%
   vertical-align: -0.2em
   background: #DAE7ED
-  height: 12px
+  block-size: 0.75rem
   display: inline-block
   border: none
 
@@ -40,20 +40,20 @@
 [id=elapsed], [id=duration]
   display: inline-block
   text-align: right
-  padding-top: 1px
+  padding-top: 0.0625rem
 
 [id=video_time]
-  width: 100%
+  inline-size: 100%
   margin-left: 1%
   position: absolute
-  top: 216px
+  top: 13.5rem
 
 [id=video_seek]
   position: absolute
   z-index: 3
-  width: 99%
-  left: 0px
-  top: 216px
+  inline-size: 99%
+  left: 0
+  top: 13.5rem
 
 
 [id=seek]
@@ -61,12 +61,12 @@
   -moz-appearance: none
   -ms-appearance: none
   appearance: none
-  width: 100%
+  inline-size: 100%
   position: absolute
   left: 0
   outline: none
-  padding: 2px 0 /* For Internet Explorer's sake */
-  height: 10px
+  padding: 0.125rem 0 /* For Internet Explorer's sake */
+  block-size: 0.625rem
   background-color: transparent
 
 [id=play], [id=pause], label[for=volume]
@@ -81,8 +81,8 @@ label[for=volume]
 
 #media_player button
   text-align: center
-  width: 42px
-  height: 41px
+  inline-size: 2.625rem
+  block-size: 2.5625rem
   background: #222
   border: 0
   padding: 0
@@ -96,16 +96,16 @@ label[for=volume]
   outline: none
 
 [id=video_controls]
-  border-top: 20px solid #222
-  margin-top: 28px
+  border-top: 1.25rem solid #222
+  margin-top: 1.75rem
 
 [id=volume]
-  width: 100px
-  margin-top: -13px
+  inline-size: 6.25rem
+  margin-top: -0.8125rem
 
 [id=video_controls] span label
   display: inline-block
-  margin-top: -15px
+  margin-top: -0.9375rem
 
 // =============================================================
 // In this section we are using experimental, browser-specific
@@ -129,21 +129,21 @@ label[for=volume]
 [id=seek]::-webkit-slider-thumb,
 [id=volume]::-webkit-slider-thumb
   -webkit-appearance: none
-  width: 1px
-  height: 15px
+  inline-size: 0.0625rem
+  block-size: 0.9375rem
   border-radius: 10%
   background: #FF7014
-  margin-top: -4px
+  margin-top: -0.25rem
 
 [id=volume]::-webkit-slider-thumb
-  margin-top: -4px
-  width: 10px
-  height: 10px
+  margin-top: -0.25rem
+  inline-size: 0.625rem
+  block-size: 0.625rem
 
 [id=volume]::-webkit-slider-runnable-track
   background: #DAE7ED
-  height: 2px
-  margin-top: 0px
+  block-size: 0.125rem
+  margin-top: 0
 
 
 
@@ -177,7 +177,7 @@ progress[id=playback]
   background-color: #FF7014
 
 [id=seek]::-moz-range-thumb
-  padding: 4px
+  padding: 0.25rem
 
 ::-moz-progress-bar
   background: #410F52
@@ -186,17 +186,17 @@ progress[id=playback]
 ::-ms-thumb
   background-image: snone
   background-color: #FF7014
-  padding: 2px 0
+  padding: 0.125rem 0
   border-radius: 100%
   vertical-align: bottom
 
 
 [id=volume]::-ms-track
   background-color: #666
-  height: 10px
-  margin: 17px 0 0 5px
-  height: 3px
-  border: 1px solid #222
+  block-size: 0.625rem
+  margin: 1.0625rem 0 0 0.3125rem
+  block-size: 0.1875rem
+  border: 0.0625rem solid #222
 
 [id=playback]::-ms-fill
   background: #410F52
@@ -218,30 +218,30 @@ progress[id=playback]
 
 [id=seek]::-ms-thumb
   border-color: #FF7014
-  border-width: 2px
+  border-width: 0.125rem
   border-style: solid
-  margin-top: -5px
-  padding-bottom: 10px
+  margin-top: -0.3125rem
+  padding-bottom: 0.625rem
 [id=volume]::-ms-fill-lower
   background: transparent
 video
 
-  width: 350px
-  height: 200px
+  inline-size: 21.875rem
+  block-size: 12.5rem
 
 
 /*                    Description                     */
 hr.style-video
-  border: 0px
-  width: 90px
-  height: 1px
+  border: 0
+  inline-size: 5.625rem
+  block-size: 0.0625rem
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 
 
 .des
   font-family: "Open sans", Georgia, Sans-serif
-  width: 200px
-  padding: 5px
+  inline-size: 12.5rem
+  padding: 0.3125rem
   border: none
   display: block
   margin-left: 13%
@@ -250,39 +250,39 @@ hr.style-video
 .error
   font-family: "Open Sans", georgia, Sans-serif
 .design
-  width: 100%
+  inline-size: 100%
   background-color: #eff0f1
   position: relative
   z-index: 10
-  padding-bottom: 30px 20px
+  padding-bottom: 1.875rem 1.25rem
 /* Media Query*/
-@media only screen and (min-width: 1080px)
+@media only screen and (min-inline-size: 67.5rem)
 
   #media_player
-    width: 360px
-    height: 386px
-    margin-left: 16px
+    inline-size: 22.5rem
+    block-size: 24.125rem
+    margin-left: 1rem
     position: relative
-    font: normal 10px / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
+    font: normal 0.625rem / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
     background: #111111
     color: #DAE7ED
     top: 1.5em
 
   #media_player video
-    width: 350px
-    height: 300px
-    margin-top: 10px
-    margin-left: 5px
+    inline-size: 21.875rem
+    block-size: 18.75rem
+    margin-top: 0.625rem
+    margin-left: 0.3125rem
     position: relative
     z-index: 1
     display: block
 
   /* Progress bar, background before : track*/
   [id=playback]
-    width: 99%
+    inline-size: 99%
     vertical-align: -0.2em
     background: #DAE7ED
-    height: 10px
+    block-size: 0.625rem
     display: inline-block
     border: none
 
@@ -292,20 +292,20 @@ hr.style-video
   [id=elapsed], [id=duration]
     display: inline-block
     text-align: right
-    padding-top: 1px
+    padding-top: 0.0625rem
 
   [id=video_time]
-    width: 100%
+    inline-size: 100%
     margin-left: 1%
     position: absolute
-    top: 313px
+    top: 19.5625rem
 
   [id=video_seek]
     position: absolute
     z-index: 3
-    width: 99%
-    left: 0px
-    top: 301px
+    inline-size: 99%
+    left: 0
+    top: 18.8125rem
 
 
   [id=seek]
@@ -313,12 +313,12 @@ hr.style-video
     -moz-appearance: none
     -ms-appearance: none
     appearance: none
-    width: 100%
+    inline-size: 100%
     position: absolute
     left: 0
     outline: none
-    padding: 2px 0 /* For Internet Explorer's sake */
-    height: 37px
+    padding: 0.125rem 0 /* For Internet Explorer's sake */
+    block-size: 2.3125rem
     background-color: transparent
 
   [id=play], [id=pause], label[for=volume]
@@ -333,8 +333,8 @@ hr.style-video
   /* The play / pause button for the media player*/
   #media_player button
     text-align: center
-    width: 42px
-    height: 41px
+    inline-size: 2.625rem
+    block-size: 2.5625rem
     background: #222
     border: 0
     padding: 0
@@ -348,16 +348,16 @@ hr.style-video
     outline: none
   /*  End of the play pause button */
   [id=video_controls]
-    border-top: 20px solid #222
-    margin-top: 25px
+    border-top: 1.25rem solid #222
+    margin-top: 1.5625rem
 
   [id=volume]
-    width: 100px
-    margin-top: -13px
+    inline-size: 6.25rem
+    margin-top: -0.8125rem
 
   [id=video_controls] span label
     display: inline-block
-    margin-top: -15px
+    margin-top: -0.9375rem
 
   // =============================================================
   // In this section we are using experimental, browser-specific
@@ -382,21 +382,21 @@ hr.style-video
   [id=seek]::-webkit-slider-thumb,
   [id=volume]::-webkit-slider-thumb
     -webkit-appearance: none
-    width: 1px
-    height: 14px
+    inline-size: 0.0625rem
+    block-size: 0.875rem
     background: #FF7014
-    margin-top: -4px
+    margin-top: -0.25rem
 
   [id=volume]::-webkit-slider-thumb
-    margin-top: -4px
-    width: 10px
+    margin-top: -0.25rem
+    inline-size: 0.625rem
     border-radius: 100%
-    height: 10px
+    block-size: 0.625rem
 
   [id=volume]::-webkit-slider-runnable-track
     background: #DAE7ED
-    height: 2px
-    margin-top: 0px
+    block-size: 0.125rem
+    margin-top: 0
     opacity: 0.6
 
   /* Mozilla firefox */
@@ -427,15 +427,15 @@ hr.style-video
   /*Range dots*/
   ::-moz-range-thumb
     -moz-appearance: none !important
-    border: 0px
-    width: 3px
-    left: -5px !important
+    border: 0
+    inline-size: 0.1875rem
+    left: -0.3125rem !important
     cursor: pointer
     background-image: none
     background-color: #f5f5f5
 
   [id=seek]::-moz-range-thumb
-    padding: 0px
+    padding: 0
   /* progress after */
   ::-moz-progress-bar
     background: #0465C2
@@ -444,17 +444,17 @@ hr.style-video
   ::-ms-thumb
     background-image: none
     background-color: #FF7014
-    padding: 2px 0px
+    padding: 0.125rem 0
     border-radius: 100%
     vertical-align: bottom
 
 
   [id=volume]::-ms-track
     background-color: #666
-    height: 10px
-    margin: 17px 0 0 5px
-    height: 3px
-    border: 1px solid #222
+    block-size: 0.625rem
+    margin: 1.0625rem 0 0 0.3125rem
+    block-size: 0.1875rem
+    border: 0.0625rem solid #222
 
   [id=playback]::-ms-fill
     background: #410F52
@@ -476,30 +476,30 @@ hr.style-video
   /*Seeker thumb*/
   [id=seek]::-ms-thumb
     border-color: #FF7014
-    border-width: 0px
-    margin-top: -7px
+    border-width: 0
+    margin-top: -0.4375rem
 
-    padding-bottom: 10px
+    padding-bottom: 0.625rem
   [id=volume]::-ms-fill-lower
     background: transparent
   video
 
-    width: 350px
-    height: 200px
+    inline-size: 21.875rem
+    block-size: 12.5rem
 
 
   /*                    Description                     */
   hr.style-video
-    border: 0px
-    width: 90px
-    height: 1px
+    border: 0
+    inline-size: 5.625rem
+    block-size: 0.0625rem
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 
 
   .des
     font-family: "Open sans", Georgia, Sans-serif
-    width: 200px
-    padding: 5px
+    inline-size: 12.5rem
+    padding: 0.3125rem
     border: none
     display: block
     margin-left: 6%
@@ -508,7 +508,7 @@ hr.style-video
   .error
     font-family: "Open Sans", georgia, Sans-serif
   .design
-    width: 100%
+    inline-size: 100%
     background-color: #eff0f1
     position: relative
     z-index: 9

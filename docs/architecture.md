@@ -28,8 +28,8 @@ This document provides a high‑level view of the project's structure and runtim
 │   │   ├─ sass/            # Design‑system styles (Sass)
 │   │   └─ ts/              # TypeScript modules (organized by concern)
 │   │       ├─ components/  # UI components (e.g., formComponent.ts)
-│   │       ├─ utils/       # Utility scripts (skillbar.ts, video.ts, etc.)
-│   │       └─ data/        # Static data files (birds.ts, news.ts)
+│   │       ├─ utils/       # Utility scripts (skillbar.ts, video.ts, lightbox.ts, etc.)
+│   │       └─ data/        # Static data files (news.ts)
 │   └─ ninjajs/             # Interactive tutorial scripts
 ├─ scripts/                # Build and tooling scripts (e.g., build.ts)
 ├─ node_modules/           # NPM packages (generated, not part of core architecture)

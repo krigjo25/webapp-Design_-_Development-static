@@ -7,12 +7,12 @@ h3
 .chip
   display: inline-block
   font-family: 'Open Sans', sans-serif
-  padding: 0px 25px
-  height: 50px
+  padding: 0 1.5625rem
+  block-size: 3.125rem
   font-family: open-sans
   font-size: 1em
-  line-height: 50px
-  border-radius: 25px
+  line-height: 3.125rem
+  border-radius: 1.5625rem
   background-color: #ccc
   cursor: pointer
 
@@ -21,9 +21,9 @@ h3
   position: absolute
   background-color: #FAFAFA
   font-family: 'Open Sans', sans-serif
-  padding: 0px 25px
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
-  border-radius: 25px
+  padding: 0 1.5625rem
+  box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2)
+  border-radius: 1.5625rem
 
 .chip:hover .chip-content
   display: inline-block
@@ -34,18 +34,18 @@ h3
 
 .chip img
   float: left
-  margin: 0 10px 0 -25px
-  height: 50px
-  width: 50px
+  margin: 0 0.625rem 0 -1.5625rem
+  block-size: 3.125rem
+  inline-size: 3.125rem
   border-radius: 50%
 
 .design
-  width: 100%
+  inline-size: 100%
   background-color: #eff0f1
   position: relative
   z-index: 10
   padding: 10em 1em
-  margin: 0px 0px
+  margin: 0 0
 /*Feedback*/
 legend
   font-family: "Opensans", sans-serif
@@ -63,25 +63,25 @@ input[type="text"]
   border-left: none
   border-right: none
   border-top: none
-  border-bottom: 1px groove black
-  width: 50%
-  height: 2em
+  border-bottom: 0.0625rem groove black
+  inline-size: 50%
+  block-size: 2em
 input[type=text]:focus
-  border: 1px solid lightblue
+  border: 0.0625rem solid lightblue
 
 input[type=checkbox]:focus
-  border: 1px solid lightblue
+  border: 0.0625rem solid lightblue
 textarea:focus
-  border: 1px solid lightblue
+  border: 0.0625rem solid lightblue
 
 
 input[type=submit]
-  padding: 10px
+  padding: 0.625rem
   background-color: lightgreen
 input[type=submit]:hover
   background-color: green
 input[type=reset]
-  padding: 10px
+  padding: 0.625rem
 input[type=reset]:hover
   background-color: red
 textarea
