@@ -70,11 +70,11 @@ The project uses npm scripts to build the site:
 
 ## Documentation
 
-You can find more details and diagrams in the [docs/](./docs/) folder:
+Comprehensive project documentation, architectural diagrams, and version history are available in the [docs/](./docs/) directory:
 
-- **[Changelog](./docs/CHANGELOG.md):** Full history of changes and project versions.
-- **[Architecture Overview](./docs/architecture.md):** Information about the project structure and how it works.
-- **[Diagrams](./docs/diagrams.drawio):** Visual maps of the system including Context and Architecture diagrams.
+- **[Changelog](./docs/CHANGELOG.md):** Full history of project evolution, features, and fixes from 2014 to 2026.
+- **[Architecture Overview](./docs/architecture.md):** Detailed breakdown of the project structure and runtime flow.
+- **[Diagrams](./docs/diagrams.drawio):** Visual maps of the system (Context, Architecture, and Runtime Flow).
 
 ---
 

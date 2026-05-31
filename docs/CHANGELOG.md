@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0] - 2026-05-31
+### Added
+- Created `src/types/globals.d.ts` to provide robust global type definitions for **jQuery** and **$**, resolving persistent editor and compiler errors.
+
+### Fixed
+- Fixed TypeScript "cannot find name JQueryStatic" and "cannot find name jQuery" errors in `menu.ts`.
+- Refined `menu.ts` with a safe IIFE and proper type safety.
+- Resolved build failures caused by redundant type declarations in `news.ts` and `menu.ts`.
+
+### Changed
+- **Documentation Refinement:** Updated `README.md` and `CHANGELOG.md` to reflect the latest technical stabilization and versioning milestones.
+- **Enhanced Build Pipeline:** Optimized the TypeScript compilation step in the build script for better reliability.
+
 ## [2.2.0] - 2026-05-31
 ### Added
 - Consolidated all project diagrams into a single, high-quality colored Draw.io file (`docs/diagrams.drawio`).

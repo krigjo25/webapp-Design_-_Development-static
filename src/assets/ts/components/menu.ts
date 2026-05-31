@@ -1,4 +1,9 @@
+/**
+ * Mobile Navigation Menu Logic
+ */
+
 (function($: JQueryStatic) {
+  if (!$) return;
 
   $(".menu-icon").on("click", function(this: HTMLElement) {
     $(this).toggleClass("open");
@@ -7,3 +12,5 @@
   });
 
 })(jQuery);
+
+export {};
