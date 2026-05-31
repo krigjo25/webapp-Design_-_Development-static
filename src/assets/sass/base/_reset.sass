@@ -1,170 +1,170 @@
 @charset "utf-8"
+@use "variables" as vars
+@use "mixins" as mix
 
 /* Resets & Base styles */
 *
   box-sizing: border-box
 
 h3
-  font-size: 1rem
+  font-size: vars.$size-base
   font-weight: bold
-  font-family: "Open Sans", sans-serif
+  font-family: vars.$font-sans
   margin: 0
 
 .background
-  background-color: #ffffff
-  color: #000000
+  background-color: vars.$bg-main
+  color: vars.$text-dark
+
+p
+  margin-block-start: 0
+  margin-block-end: vars.$gap-md
+  line-height: 1.6
 
 /* About Us Layout Container */
 .about-container
-  max-inline-size: 62.5rem
-  margin: 0 auto
-  padding: 3rem 1.5rem
-  display: flex
-  flex-direction: column
-  gap: 3rem
+  @include mix.container-main
+  @include mix.flex-column
+  gap: vars.$gap-xl
 
-/* Modernized Designer Avatar Banner */
+.about-profile
+  @include mix.flex-row
+  flex-wrap: wrap // Allow wrap for mobile responsiveness
+  align-items: flex-start
+  gap: 3rem
+  inline-size: 100%
+
+/* Modernized Profile Card */
+.portrait-container
+  margin: 0
+  padding: vars.$gap-md
+  @include mix.flex-column
+  align-items: center
+  @include mix.glass-card(rgba(255, 255, 255, 0.9), 1rem)
+  @include mix.card-hover
+  border-radius: vars.$radius-pill
+  
+  // Base scale (Desktop/Tablet)
+  flex: 0 0 25%
+  inline-size: 25%
+  max-inline-size: 100%
+  order: 2 // Positioned on the right
+
+  @include mix.media-down(vars.$breakpoint-tablet)
+    flex: 0 0 100%
+    inline-size: 100%
+    max-inline-size: 100%
+    order: 1 // Stack on top for mobile
+
 .about-banner
   position: relative
   inline-size: 100%
-  block-size: 15.625rem
+  margin-block-end: vars.$gap-md
   overflow: hidden
-  border-radius: 1.5rem
-  box-shadow: 0 0.9375rem 2.1875rem rgba(0,0,0,0.1)
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease
-  margin-bottom: 0
-
-  @media only screen and (min-inline-size: 48rem)
-    block-size: 23.75rem
-
-  &:hover
-    transform: translateY(-0.25rem)
-    box-shadow: 0 1.25rem 2.5rem rgba(0,0,0,0.14)
+  border-radius: vars.$radius-lg
+  @include mix.flex-center
 
   .banner-img
     inline-size: 100%
-    block-size: 100%
-    object-fit: cover
-    object-position: center 28%
+    block-size: auto
+    object-fit: contain
     display: block
-
-  .banner-overlay
-    position: absolute
-    bottom: 0
-    left: 0
-    right: 0
-    block-size: 60%
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent)
-    display: flex
-    align-items: flex-end
-    padding: 2rem
-    transition: all 0.4s ease
-
-    .banner-caption
-      color: #ffffff
-      font-family: 'Open Sans', sans-serif
-      text-align: left
-
-      h3
-        font-family: 'Awery', sans-serif
-        font-size: 2rem
-        color: #ffffff
-        margin: 0 0 0.25rem 0
-        letter-spacing: -0.01em
-        text-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.3)
-        font-weight: 700
-
-      p
-        font-size: 0.95rem
-        color: rgba(255, 255, 255, 0.85)
-        margin: 0
-        text-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.2)
 
 /* About Description Card */
 .about-description
-  flex-grow: 1
-  display: flex
-  flex-direction: column
+  flex: 1
+  @include mix.flex-column
   justify-content: center
-  padding: 2.25rem
-  background: rgba(255, 255, 255, 0.75)
-  backdrop-filter: blur(0.75rem)
-  -webkit-backdrop-filter: blur(0.75rem)
-  border: 0.0625rem solid rgba(255, 255, 255, 0.4)
-  border-radius: 1.5rem
-  box-shadow: 0 0.625rem 1.875rem -0.625rem rgba(0, 0, 0, 0.05)
-  border-left: 0.375rem solid #0ca888
+  padding: 3rem
+  @include mix.glass-card
+  border-radius: vars.$radius-pill
+  box-shadow: vars.$shadow-md
+  border-inline-start: 0.5rem solid vars.$brand-primary
   text-align: left
+  order: 1 // Positioned on the left
+
+  @include mix.media-down(vars.$breakpoint-tablet)
+    order: 2 // Stack below image for mobile
 
   h2
-    font-family: 'Awery', sans-serif
-    color: #117
-    margin-top: 0
-    margin-bottom: 1rem
-    font-size: 2.2rem
-    letter-spacing: -0.01em
+    @include mix.heading-style(2.5rem)
+    margin-block-start: 0
+    margin-block-end: 1.5rem
 
   p
-    font-family: 'Open Sans', sans-serif
-    color: #444
-    line-height: 1.7
-    margin-top: 0
-    margin-bottom: 1rem
-    font-size: 0.975rem
+    font-family: vars.$font-sans
+    color: vars.$text-body
+    line-height: 1.8
+    margin-block-start: 0
+    margin-block-end: 1.5rem
+    font-size: vars.$size-base
 
     &:last-child
-      margin-bottom: 0
+      margin-block-end: 0
+
+/* Shared Caption Style */
+.des
+  padding: 0
+  @include mix.caption-style
+  line-height: 1.5
+  display: block
+  inline-size: 100%
+
+  strong
+    font-size: vars.$radius-lg
+    color: vars.$text-dark
+    font-style: normal
+    display: block
+    margin-block-end: 0.25rem
 
 /* Skills Canvas Grid */
 #bars
   display: grid
   grid-template-columns: repeat(2, 1fr)
-  gap: 2rem
+  gap: 2.5rem
   inline-size: 100%
-  margin: 1rem 0
+  margin: 0
   padding: 0
   position: relative
-  left: 0
+  inset-inline-start: 0
 
-  @media only screen and (min-inline-size: 48rem)
+  @include mix.media-up(vars.$breakpoint-desktop)
     grid-template-columns: repeat(4, 1fr)
 
   article
-    background: rgba(255, 255, 255, 0.7)
-    backdrop-filter: blur(0.5rem)
-    -webkit-backdrop-filter: blur(0.5rem)
-    border: 0.0625rem solid rgba(255, 255, 255, 0.4)
-    border-radius: 1.25rem
-    padding: 1.5rem 1rem
+    @include mix.glass-card(rgba(255, 255, 255, 0.7), 0.5rem)
+    border-radius: vars.$radius-xl
+    padding: 2rem 1.5rem
     text-align: center
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.04)
+    box-shadow: vars.$shadow-md
     display: flex
     flex-direction: column
     align-items: center
     justify-content: space-between
-    gap: 1rem
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1)
+    gap: 1.25rem
+    @include mix.transition-standard(all, 0.3s)
 
     &:hover
-      transform: translateY(-0.25rem)
-      box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.08)
-      border-color: rgba(12, 168, 136, 0.3)
+      transform: translateY(-0.35rem)
+      box-shadow: vars.$shadow-lg
+      border-color: rgba(12, 168, 136, 0.4)
 
     h3
-      font-family: 'Open Sans', sans-serif
-      font-size: 0.9rem
+      font-family: vars.$font-sans
+      font-size: vars.$size-base
       font-weight: 700
-      color: #333
+      color: vars.$text-main
       margin: 0
       line-height: 1.4
 
       strong
-        color: #0ca888
-        margin-right: 0.125rem
+        color: vars.$brand-primary
+        margin-inline-end: 0.25rem
 
     .bar-circle
       display: block
-      margin: 0.7em auto
+      margin-block: 0.5rem
+      margin-inline: auto
 
 /* ToolTip styling */
 .tip
@@ -182,18 +182,18 @@ h3
   padding: 0.3125rem 0
   position: absolute
   z-index: 1
-  bottom: 125%
-  left: 50%
-  margin-left: -3.75rem
+  inset-block-end: 125%
+  inset-inline-start: 50%
+  margin-inline-start: -3.75rem
   opacity: 0
   transition: opacity 1s
 
 .tip .text::after
   content: ""
   position: absolute
-  top: 100%
-  left: 50%
-  margin-left: -0.3125rem
+  inset-block-start: 100%
+  inset-inline-start: 50%
+  margin-inline-start: -0.3125rem
   border-width: 0.3125rem
   border-style: solid
   border-color: #555 transparent transparent transparent
