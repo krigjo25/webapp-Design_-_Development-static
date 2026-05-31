@@ -8,26 +8,26 @@ ${getMetadata(title, prefix)}
   <header class="header">
     <div class="weblogo">
       <a href="${prefix}index.html">
-        <img src="${prefix}assets/media/images/logo/weblogo/k-design.png" alt="k-design/development">
+        <img src="${prefix}assets/media/vector/logo/weblogo/k-design.png" alt="k-design/development">
       </a>
     </div>
-  <nav>
+    <nav>
     <ul>
     <a class="link" href="${prefix}index.html">
       <li>
-        <img src="${prefix}assets/media/images/nav/news.svg" class="news" alt="News">
+        <img src="${prefix}assets/media/vector/icons/nav/news.svg" class="news" alt="News">
       <h4>News</h4>
       </li>
       </a>
       <a class="link" href="${prefix}about.html">
       <li>
-        <img src="${prefix}assets/media/images/nav/aboutus.svg" class="about" alt="About us">
+        <img src="${prefix}assets/media/vector/icons/nav/aboutus.svg" class="about" alt="About us">
       <h4>About us</h4>
       </li>
       </a>
       <a class="link" href="${prefix}portfolio.html">
       <li>
-        <img src="${prefix}assets/media/images/nav/portfolio.svg" class="port" alt="Portfolio">
+        <img src="${prefix}assets/media/vector/icons/nav/portfolio.svg" class="port" alt="Portfolio">
       <h4>Portfolio</h4>
       </li>
       </a>

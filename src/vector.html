@@ -1,113 +1,54 @@
 <!-- include "header" -->
-<script type="module" src="assets/ts/utils/lightbox.js"></script>
 
 <main class="design">
 
   <h2 class="section-title">Vectors</h2>
 
-  <!-- Vector Trigger (Only first image visible) -->
-  <div class="modal-graphics">
-    <figure class="column">
-      <img src="assets/media/images/portfolio/graphic.jpg" class="cursor" onclick="currentSwitch(1, 'vector-lightbox')" alt="Vector Art" style="inline-size:100%">
-      <figcaption class="des">Vector Art</figcaption>
+  <div class="gallery-row">
+    <figure class="gallery-item">
+      <img src="assets/media/vector/christmas-night.svg" alt="Triangle Owl">
+      <figcaption class="des">Triangle Owl - Geometric Vector Art</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="assets/media/vector/heart.svg" alt="Circled Owl">
+      <figcaption class="des">Circled Owl - Logo Concept</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="assets/media/vector/ninja-script.svg" alt="X Owl">
+      <figcaption class="des">X Owl - Ninja Script Branding</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="assets/media/vector/owl.svg" alt="Paper Owl">
+      <figcaption class="des">Paper Owl - Detailed Illustration</figcaption>
     </figure>
   </div>
-
-  <!-- Vector Modal Box (Hidden by default) -->
-  <section id="vector-lightbox" class="modal">
-    <span class="close" onclick="modalClose('vector-lightbox')">×</span>
-    <div class="modal-graphics">
-
-      <figure class="modalSlide">
-        <div class="nr"> 1 / 4</div>
-        <img src="assets/media/vector/christmas-night.svg" alt="Triangle Owl">
-      </figure>
-
-      <figure class="modalSlide">
-        <div class="nr"> 2 / 4</div>
-        <img src="assets/media/vector/heart.svg" alt="Circled Owl">
-      </figure>
-
-      <figure class="modalSlide">
-        <div class="nr"> 3 / 4</div>
-        <img src="assets/media/vector/ninja-script.svg" alt="X Owl">
-      </figure>
-
-      <figure class="modalSlide">
-        <div class="nr"> 4 / 4</div>
-        <img src="assets/media/vector/owl.svg" alt="Paper Owl">
-      </figure>
-
-      <!-- Previous & next buttons-->
-      <a class="prev" onclick="toggleSwitch(-1, 'vector-lightbox')">❮</a>
-      <a class="next" onclick="toggleSwitch(1, 'vector-lightbox')">❯</a>
-      
-      <figcaption class="caption">
-        <p class="caption-text"></p>
-      </figcaption>
-
-      <!-- Hidden ms elements for caption extraction -->
-      <div style="display:none;">
-        <img class="ms" alt="Triangle Owl">
-        <img class="ms" alt="Circled Owl">
-        <img class="ms" alt="X Owl">
-        <img class="ms" alt="Paper Owl">
-      </div>
-    </div>
-  </section>
 
   <h2 class="section-title">Logos</h2>
 
-  <!-- Logo Trigger (Only first image visible) -->
-  <div class="modal-graphics">
-    <figure class="column">
-      <img src="assets/media/images/portfolio/logo.jpg" class="cursor" onclick="currentSwitch(1, 'logo-lightbox')" alt="Logos" style="width:100%">
-      <figcaption class="des">Logos</figcaption>
+  <div class="gallery-row">
+    <figure class="gallery-item">
+      <img src="assets/media/vector/logo/project-media-ch.png" alt="Project-Media Christmas edition - 2014">
+      <figcaption class="des">Project-Media Christmas Edition - 2014</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="assets/media/vector/logo/weblogo/k-design.png" alt="K-design-development logo - 2014">
+      <figcaption class="des">K-Design-Development Logo - 2014</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="assets/media/vector/logo/weblogo/k-design-utvikling.png" alt="K-design-development logo - 2014 (alternative)">
+      <figcaption class="des">K-Design Alternative Branding</figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+      <img src="assets/media/vector/logo/hexmarks.png" alt="Hexmarks logo - 2014">
+      <figcaption class="des">Hexmarks Logo - Professional Identity</figcaption>
     </figure>
   </div>
-
-  <!-- Logo Modal Box (Hidden by default) -->
-  <section id="logo-lightbox" class="modal">
-    <span class="close" onclick="modalClose('logo-lightbox')">×</span>
-    <div class="modal-graphics">
-
-      <figure class="modalSlide">
-        <div class="nr"> 1 / 4</div>
-        <img src="assets/media/vector/logo/project-media-ch.png" alt="Project-Media Christmas edition - 2014">
-      </figure>
-
-      <figure class="modalSlide">
-        <div class="nr"> 2 / 4</div>
-        <img src="assets/media/vector/logo/weblogo/k-design.png" alt="K-design-development logo - 2014">
-      </figure>
-
-      <figure class="modalSlide">
-        <div class="nr"> 3 / 4</div>
-        <img src="assets/media/vector/logo/weblogo/k-design.png" alt="K-design-development logo - 2014 (alternative)">
-      </figure>
-
-      <figure class="modalSlide">
-        <div class="nr"> 4 / 4</div>
-        <img src="assets/media/vector/logo/hexmarks.png" alt="Hexmarks logo - 2014">
-      </figure>
-
-      <!-- Previous & next buttons-->
-      <a class="prev" onclick="toggleSwitch(-1, 'logo-lightbox')">❮</a>
-      <a class="next" onclick="toggleSwitch(1, 'logo-lightbox')">❯</a>
-      
-      <figcaption class="caption">
-        <p class="caption-text"></p>
-      </figcaption>
-
-      <!-- Hidden ms elements for caption extraction -->
-      <div style="display:none;">
-        <img class="ms" alt="Project-Media">
-        <img class="ms" alt="K-Design">
-        <img class="ms" alt="K-Design Alt">
-        <img class="ms" alt="Hexmarks">
-      </div>
-    </div>
-  </section>
 
   <h2 class="section-title">Logo Slideshow</h2>
   <section id="carousel">

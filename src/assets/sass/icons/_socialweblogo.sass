@@ -1,47 +1,39 @@
 @charset "utf-8"
-/* CSS Document */
+
+.site-footer
+  text-align: center
+  padding: 2rem 1rem
+  background-color: #f5f5f5
+  
+  .social-icons
+    display: flex
+    justify-content: center
+    gap: 1rem
+    margin-bottom: 1rem
+
 .social
-  position: relative
-  background-position: bottom
-  display: block
+  display: inline-block
+  inline-size: 2.875rem
+  block-size: 2.875rem
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: center
+  transition: transform 0.2s ease
+
+  &:hover
+    transform: scale(1.1)
 
 .fb
-  background-image: url(assets/media/vector/icons/fb.svg)
-  background-repeat: no-repeat
-  display: inline-block
-  position: relative
-  padding: 1.5rem
-  border-radius: 2.5rem
-  left: 1.0625rem
-  top: 1.8125rem
-.fb:hover
-  background-image: url(assets/media/vector/icons/fb-hover.svg)
-  background-repeat: no-repeat
-  cursor: pointer
+  background-image: url(../media/vector/icons/social-media/fb.svg)
+  &:hover
+    background-image: url(../media/vector/icons/social-media/fb-hover.svg)
+
 .insta
-  background-image: url(assets/media/vector/icons/instagram.svg)
-  background-repeat: no-repeat
-  position: relative
-  padding: 1.5625rem
-  display: inline-block
-  left: 1.0625rem
-  top: 1.8125rem
-.insta:hover
-  background-image: url(assets/media/vector/icons/insta-hover.png)
-  background-repeat: no-repeat
-  cursor: pointer
-.insta:before
-  content: "Instagram"
+  background-image: url(../media/vector/icons/social-media/instagram.svg)
+  &:hover
+    background-image: url(../media/vector/icons/social-media/insta-hover.svg)
+
 .ello
-  background-image: url(assets/media/vector/icons/ello.svg)
-  background-repeat: no-repeat
-  position: relative
-  padding: 1.5625rem
-  display: inline-block
-  left: 0.9375rem
-  top: 1.8125rem
-.ello:hover
-  background-image: url(assets/media/vector/icons/ello-hover.svg)
-  background-repeat: no-repeat
-  cursor: pointer
-  content: "(ello)"
+  background-image: url(../media/vector/icons/social-media/ello.svg)
+  &:hover
+    background-image: url(../media/vector/icons/social-media/ello-hover.svg)
