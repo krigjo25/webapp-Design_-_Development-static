@@ -4,8 +4,10 @@
 <script src="assets/js/lightbox.js"></script>
 
 <main class="design">
-<!-- lightbox -->
-<!-- The Image Table -->
+
+  <h2 class="section-title">Vectors</h2>
+
+  <!-- The Image Table -->
   <section class="row">
     <figure class="column">
     <img src="assets/portfolio/vector/Owl.svg" onclick="modalOpen(); currentSwitch(1)" class="cursor hover-shadow" alt="Owl">
@@ -20,50 +22,95 @@
     <img src="" onclick="Openmodal();currentModal(4)" class="cursor hover-shadow" alt="Vector 4">
     </figure>
   </section>
-<!-- End of the Table-->
-<!-- Modal box -->
-<section id="lightbox" class="modal">
-<span class="close" onclick="modalClose()">×</span>
-<div class="modal-graphics">
+  <!-- End of the Table-->
 
-  <figure class="modalSlide">
-    <div class="nr"> 1 / 4</div>
-    <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 1">
-  </figure>
+  <!-- Modal box -->
+  <section id="lightbox" class="modal">
+  <span class="close" onclick="modalClose()">×</span>
+  <div class="modal-graphics">
 
-  <figure class="modalSlide">
-    <div class="nr"> 2 / 4</div>
-    <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 2">
-  </figure>
-
-  <figure class="modalSlide">
-    <div class="nr"> 3 / 4</div>
-    <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 3">
-  </figure>
-<!--End of the modal box-->
-
-<!-- Previous & next buttons-->
-  <a class="prev" onclick="toggleSwitch(-1)">❮</a>
-  <a class="next" onclick="toggleSwitch(1)">❯</a>
-  
-  <figcaption class="caption">
-    <p id="caption"></p>
-  </figcaption>
-
-  <figure class="column">
-    <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(1)" alt="Paper Owl">
+    <figure class="modalSlide">
+      <div class="nr"> 1 / 4</div>
+      <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 1">
     </figure>
+
+    <figure class="modalSlide">
+      <div class="nr"> 2 / 4</div>
+      <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 2">
+    </figure>
+
+    <figure class="modalSlide">
+      <div class="nr"> 3 / 4</div>
+      <img src="assets/portfolio/vector/Owl.svg" width="25%" alt="Owl Slide 3">
+    </figure>
+  <!--End of the modal box-->
+
+  <!-- Previous & next buttons-->
+    <a class="prev" onclick="toggleSwitch(-1)">❮</a>
+    <a class="next" onclick="toggleSwitch(1)">❯</a>
+    
+    <figcaption class="caption">
+      <p id="caption"></p>
+    </figcaption>
+
     <figure class="column">
-      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(2)" alt="Triangle Owl">
+      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(1)" alt="Paper Owl">
+      </figure>
+      <figure class="column">
+        <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(2)" alt="Triangle Owl">
+      </figure>
+       <figure class="column">
+        <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(3)" alt="Circled Owl">
+      </figure>
+       <figure class="column">
+        <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(4)" alt="X Owl">
+      </figure>
+    </div>
+  </section>
+
+  <h2 class="section-title">Logo Slideshow</h2>
+
+  <section id="carousel">
+    <figure class="slideshow fade">
+      <img src="assets/media/images/footer/Desert.jpg" class="img" alt="Desert">
+      <figcaption class="capiton">Los Angeles Desert</figcaption>
     </figure>
-     <figure class="column">
-      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(3)" alt="Circled Owl">
+    <figure class="slideshow fade">
+      <img src="assets/media/images/footer/Hydrangeas.jpg" class="img" alt="Hydrangeas">
+      <figcaption class="capiton">Rainforest Hydrangeas</figcaption>
     </figure>
-     <figure class="column">
-      <img class="ms cursor" src="assets/portfolio/vector/Owl.svg" onclick="currentSwitch(4)" alt="X Owl">
+    <figure class="slideshow fade">
+      <img src="assets/media/images/footer/Jellyfish.jpg" class="img" alt="Jellyfish">
+      <figcaption class="capiton">Norwegian jellyfish</figcaption>
     </figure>
-  </div>
-</section>
+  </section>
+  <br>
+  <nav id="indicator">
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+    <div class="indicator"></div>
+  </nav>
 
 </main>
+
+<script>
+  var slideIndex = 0;
+  showSlides();
+  function showSlides() {
+    var i;
+    var carousel = document.getElementsByClassName("slideshow");
+    var indicator = document.getElementsByClassName('indicator');
+    for (i = 0; i < carousel.length; i++) {
+      carousel[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > carousel.length) { slideIndex = 1; }
+    for (i = 0; i < indicator.length; i++) {
+      indicator[i].className = indicator[i].className.replace(" active", "");
+    }
+    carousel[slideIndex-1].style.display = "block";
+    indicator[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000);
+  }
+</script>
 <!-- include "footer" -->
