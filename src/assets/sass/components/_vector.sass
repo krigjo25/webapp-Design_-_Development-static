@@ -13,8 +13,9 @@
 
 .gallery-item
   flex: 1 1 calc(45% - 2rem)
-  max-inline-size: 100%
+  max-inline-size: 50%
   text-align: center
+  cursor: pointer
   
   img
     max-inline-size: 100%
@@ -27,12 +28,37 @@
       transform: translateY(-0.25rem)
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
 
+.logo-row
+  display: flex
+  flex-wrap: nowrap
+  justify-content: center
+  gap: 1.5rem
+  margin-block: 1.5rem
+  inline-size: 100%
+  overflow-x: auto
+  padding-block-end: 1rem
+
+.logo-item
+  flex: 0 0 12.5rem
+  text-align: center
+  cursor: pointer
+
+  img
+    max-inline-size: 100%
+    block-size: auto
+    transition: transform 0.2s ease
+
+    &:hover
+      transform: scale(1.05)
+
 .des
   padding-block-start: 1rem
   font-family: 'Open Sans', sans-serif
   color: #333
   font-size: 0.9rem
   line-height: 1.4
+  text-align: center
+  font-style: italic
 
 .design
   inline-size: 100%
@@ -49,10 +75,15 @@
   color: #111
   font-size: 2rem
 
-@media only screen and (min-inline-size: 67.5rem)
+@media only screen and (max-inline-size: 48rem)
   .gallery-item
-    flex: 1 1 calc(22% - 2rem)
-    max-inline-size: 15.625rem
+    flex: 1 1 100%
+    max-inline-size: 100%
+  
+  .logo-row
+    flex-wrap: wrap
+    justify-content: space-around
 
+@media only screen and (min-inline-size: 67.5rem)
   .section-title
     font-size: 2.5rem

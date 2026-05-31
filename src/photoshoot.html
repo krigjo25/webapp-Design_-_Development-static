@@ -1,0 +1,48 @@
+<!-- include "header" -->
+<script type="module" src="assets/ts/utils/lightbox.js"></script>
+
+<main class="design">
+
+  <h2 class="section-title">Photoshoots</h2>
+
+  <div class="gallery-row">
+    <figure class="gallery-item" onclick="currentSwitch(1, 'photo-desert-overlay')">
+      <img src="assets/media/images/dummy/Desert.jpg" alt="Desert (2014)">
+      <figcaption class="des">Desert (2014)</figcaption>
+    </figure>
+    <section id="photo-desert-overlay" class="modal">
+      <span class="close" onclick="modalClose('photo-desert-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/images/dummy/Desert.jpg" alt="Desert (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
+
+    <figure class="gallery-item" onclick="currentSwitch(1, 'photo-hydrangeas-overlay')">
+      <img src="assets/media/images/dummy/Hydrangeas.jpg" alt="Hydrangeas (2014)">
+      <figcaption class="des">Hydrangeas (2014)</figcaption>
+    </figure>
+    <section id="photo-hydrangeas-overlay" class="modal">
+      <span class="close" onclick="modalClose('photo-hydrangeas-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/images/dummy/Hydrangeas.jpg" alt="Hydrangeas (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
+
+    <figure class="gallery-item" onclick="currentSwitch(1, 'photo-jellyfish-overlay')">
+      <img src="assets/media/images/dummy/Jellyfish.jpg" alt="Jellyfish (2014)">
+      <figcaption class="des">Jellyfish (2014)</figcaption>
+    </figure>
+    <section id="photo-jellyfish-overlay" class="modal">
+      <span class="close" onclick="modalClose('photo-jellyfish-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/images/dummy/Jellyfish.jpg" alt="Jellyfish (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<!-- include "footer" -->

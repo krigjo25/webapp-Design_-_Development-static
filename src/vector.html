@@ -1,66 +1,131 @@
 <!-- include "header" -->
+<script type="module" src="assets/ts/utils/lightbox.js"></script>
 
 <main class="design">
 
   <h2 class="section-title">Vectors</h2>
 
   <div class="gallery-row">
-    <figure class="gallery-item">
-      <img src="assets/media/vector/christmas-night.svg" alt="Triangle Owl">
-      <figcaption class="des">Triangle Owl - Geometric Vector Art</figcaption>
+    <figure class="gallery-item" onclick="currentSwitch(1, 'v1-overlay')">
+      <img src="assets/media/vector/christmas-night.svg" alt="Triangle Owl (2014)">
+      <figcaption class="des">Triangle Owl (2014)</figcaption>
     </figure>
+    <section id="v1-overlay" class="modal">
+      <span class="close" onclick="modalClose('v1-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/christmas-night.svg" alt="Triangle Owl (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
 
-    <figure class="gallery-item">
-      <img src="assets/media/vector/heart.svg" alt="Circled Owl">
-      <figcaption class="des">Circled Owl - Logo Concept</figcaption>
+    <figure class="gallery-item" onclick="currentSwitch(1, 'v2-overlay')">
+      <img src="assets/media/vector/heart.svg" alt="Circled Owl (2014)">
+      <figcaption class="des">Circled Owl (2014)</figcaption>
     </figure>
+    <section id="v2-overlay" class="modal">
+      <span class="close" onclick="modalClose('v2-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/heart.svg" alt="Circled Owl (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
 
-    <figure class="gallery-item">
-      <img src="assets/media/vector/ninja-script.svg" alt="X Owl">
-      <figcaption class="des">X Owl - Ninja Script Branding</figcaption>
+    <figure class="gallery-item" onclick="currentSwitch(1, 'v3-overlay')">
+      <img src="assets/media/vector/ninja-script.svg" alt="X Owl (2014)">
+      <figcaption class="des">X Owl (2014)</figcaption>
     </figure>
+    <section id="v3-overlay" class="modal">
+      <span class="close" onclick="modalClose('v3-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/ninja-script.svg" alt="X Owl (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
 
-    <figure class="gallery-item">
-      <img src="assets/media/vector/owl.svg" alt="Paper Owl">
-      <figcaption class="des">Paper Owl - Detailed Illustration</figcaption>
+    <figure class="gallery-item" onclick="currentSwitch(1, 'v4-overlay')">
+      <img src="assets/media/vector/owl.svg" alt="Paper Owl (2014)">
+      <figcaption class="des">Paper Owl (2014)</figcaption>
     </figure>
+    <section id="v4-overlay" class="modal">
+      <span class="close" onclick="modalClose('v4-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/owl.svg" alt="Paper Owl (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
   </div>
 
   <h2 class="section-title">Logos</h2>
 
-  <div class="gallery-row">
-    <figure class="gallery-item">
-      <img src="assets/media/vector/logo/project-media-ch.png" alt="Project-Media Christmas edition - 2014">
-      <figcaption class="des">Project-Media Christmas Edition - 2014</figcaption>
+  <div class="logo-row">
+    <figure class="logo-item" onclick="currentSwitch(1, 'logo-pm-overlay')">
+      <img src="assets/media/vector/logo/project-media-ch.png" alt="Project-Media Christmas Edition (2014)">
+      <figcaption class="des">Project-Media Christmas edition (2014)</figcaption>
+    </figure>
+    <section id="logo-pm-overlay" class="modal">
+      <span class="close" onclick="modalClose('logo-pm-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/logo/project-media-ch.png" alt="Project-Media (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
+
+    <figure class="logo-item" onclick="currentSwitch(1, 'kdesign-overlay')">
+      <img src="assets/media/vector/logo/weblogo/k-design.png" alt="K-Design - 2D Version (2014)">
+      <figcaption class="des">K-Design - 2D Version (2014)</figcaption>
     </figure>
 
-    <figure class="gallery-item">
-      <img src="assets/media/vector/logo/weblogo/k-design.png" alt="K-design-development logo - 2014">
-      <figcaption class="des">K-Design-Development Logo - 2014</figcaption>
+    <figure class="logo-item" onclick="currentSwitch(2, 'kdesign-overlay')">
+      <img src="assets/media/vector/logo/weblogo/k-design-utvikling.png" alt="K-design 3D version (2014)">
+      <figcaption class="des">K-design 3D version (2014)</figcaption>
     </figure>
 
-    <figure class="gallery-item">
-      <img src="assets/media/vector/logo/weblogo/k-design-utvikling.png" alt="K-design-development logo - 2014 (alternative)">
-      <figcaption class="des">K-Design Alternative Branding</figcaption>
+    <figure class="logo-item" onclick="currentSwitch(1, 'logo-hex-overlay')">
+      <img src="assets/media/vector/logo/Hourmarks.png" alt="Hourmarks (2014)">
+      <figcaption class="des">Hourmarks (2014)</figcaption>
     </figure>
+    <section id="logo-hex-overlay" class="modal">
+      <span class="close" onclick="modalClose('logo-hex-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/logo/Hourmarks.png" alt="Hourmarks (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
 
-    <figure class="gallery-item">
-      <img src="assets/media/vector/logo/hexmarks.png" alt="Hexmarks logo - 2014">
-      <figcaption class="des">Hexmarks Logo - Professional Identity</figcaption>
+    <figure class="logo-item" onclick="currentSwitch(1, 'logo-emedia-overlay')">
+      <img src="assets/media/vector/logo/e-media.png" alt="E-Media Branding (2014)">
+      <figcaption class="des">E-Media (2014)</figcaption>
     </figure>
-  </div>
+    <section id="logo-emedia-overlay" class="modal">
+      <span class="close" onclick="modalClose('logo-emedia-overlay')">×</span>
+      <div class="modal-graphics">
+        <figure class="modalSlide"><img src="assets/media/vector/logo/e-media.png" alt="E-Media (2014)"></figure>
+        <figcaption class="caption"><p class="caption-text"></p></figcaption>
+      </div>
+    </section>
+    </div>
 
-  <h2 class="section-title">Logo Slideshow</h2>
-  <section id="carousel">
-    <figure class="slideshow fade">
-      <img src="assets/media/vector/logo/project-media-ch.png" class="img" alt="Carousel 1">
-      <figcaption class="des">Project-Media Christmas edition - 2014</figcaption>
-    </figure>
-    <figure class="slideshow fade">
-      <img src="assets/media/vector/logo/weblogo/k-design.png" class="img" alt="Carousel 2">
-      <figcaption class="des">K-design-development logo - 2014</figcaption>
-    </figure>
-  </section>
+    <!-- K-Design Collection Modal -->
+    <section id="kdesign-overlay" class="modal">
+    <span class="close" onclick="modalClose('kdesign-overlay')">×</span>
+    <div class="modal-graphics">
+      <figure class="modalSlide">
+        <div class="nr">1 / 2</div>
+        <img src="assets/media/vector/logo/weblogo/k-design.png" alt="K-Design - Previous Version (2014)">
+      </figure>
+      <figure class="modalSlide">
+        <div class="nr">2 / 2</div>
+        <img src="assets/media/vector/logo/weblogo/k-design-utvikling.png" alt="K-design 3D version (2014)">
+      </figure>
+
+      <a class="prev" onclick="toggleSwitch(-1, 'kdesign-overlay')">❮</a>
+      <a class="next" onclick="toggleSwitch(1, 'kdesign-overlay')">❯</a>
+
+      <figcaption class="caption">
+        <p class="caption-text"></p>
+      </figcaption>
+    </div>
+    </section>
 
 </main>
 
