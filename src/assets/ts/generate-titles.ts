@@ -9,6 +9,7 @@ const srcDir = path.resolve(__dirname, '../../../src');
 function titleFromFile(fileName: string): string {
   const base = path.basename(fileName, '.html');
   if (base === 'index') return 'Home';
+  if (base === 'ninja-script') return 'Quiz Ninja';
   // capitalize first letter
   return base.charAt(0).toUpperCase() + base.slice(1);
 }
@@ -34,8 +35,17 @@ function processFile(filePath: string) {
   console.log(`Updated title for ${path.basename(metadata.path)}`);
 }
 
-fs.readdirSync(srcDir).forEach(file => {
-  if (file.endsWith('.html')) {
-    processFile(path.join(srcDir, file));
-  }
-});
+function walkDir(dir: string) {
+  const files = fs.readdirSync(dir);
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    if (stat.isDirectory()) {
+      walkDir(filePath);
+    } else if (file.endsWith('.html')) {
+      processFile(filePath);
+    }
+  });
+}
+
+walkDir(srcDir);

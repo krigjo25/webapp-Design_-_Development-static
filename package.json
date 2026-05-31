@@ -1,6 +1,6 @@
 {
   "name": "webapp-design-development-static",
-  "version": "2.5.2",
+  "version": "2.5.3",
 
   "description": "Static webapp",
   "main": "dist/index.html",
