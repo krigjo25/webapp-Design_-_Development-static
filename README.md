@@ -21,7 +21,7 @@ The app is a portfolio that shows my work in vector art, branding, animations, a
 
 - **Responsive Design:** The website looks good on phones, tablets, and large computers.
 - **News Feed:** A list of important moments shown in a modern 3-column grid.
-- **Lightbox Galleries:** Large overlays to see art and photos in high quality.
+- **Lightbox Galleries:** High-resolution overlays to see art and photos in high quality.
 - **Custom Video Player:** A special video player with my own design and controls.
 - **Language:** The whole application is written in Norwegian.
 
@@ -72,8 +72,10 @@ The project uses npm scripts to build the site:
 
 You can find more details and diagrams in the [docs/](./docs/) folder:
 
+- **[Changelog](./docs/CHANGELOG.md):** Full history of changes and project versions.
 - **[Architecture Overview](./docs/architecture.md):** Information about the project structure and how it works.
-- **[Diagrams](./docs/diagrams.drawio):** Visual diagrams
+- **[Diagrams](./docs/diagrams.drawio):** Visual maps of the system including Context and Architecture diagrams.
+
 ---
 
 ## License

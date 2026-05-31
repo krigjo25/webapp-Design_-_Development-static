@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0] - 2026-05-31
+### Added
+- Integrated the **K-Design 3D version** as the primary site header logo.
+- Enhanced the high-resolution overlay with an **absolute topmost z-index (2147483647)** to ensure it always covers the header and navigation.
+- Implemented a **fixed-position close button** for the modal, ensuring it remains accessible even when scrolling.
+- Added **Keyboard Navigation** support (Esc key) to close active lightboxes.
+- Improved Profile Card on the "Om meg" page with **Flexbox row layout** and **25% strict scaling**.
+- Unified all branding and image captions to include **creation years (2014)** and consistent Norwegian labeling.
+
+### Fixed
+- Resolved stacking context conflicts between the site header and the portfolio overlays.
+- Fixed the "head-cropping" issue on the About page by allowing the portrait to scale naturally with `auto` height.
+- Corrected TypeScript compilation errors caused by redundant global declarations in `menu.ts` and `news.ts`.
+
+### Changed
+- **Technical Cleanup:** Purged redundant and empty source files (`figure.ts`, `logo.ts`, `slideshow.ts`, etc.) to streamline the architecture.
+- **Enhanced Overlay Visuals:** Increased the modal viewport size for desktop inspection and enforced robust centering and italics for all captions.
+
 ## [2.0.0] - 2026-05-31
 ### Added
 - Created comprehensive `CHANGELOG.md` to document project evolution.
