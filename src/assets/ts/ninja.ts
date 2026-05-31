@@ -12,7 +12,7 @@ const ninjaQuiz: QuizData = [
     ["What is the real Name of the character Wonderwoman", "Dianna Prince"]
 ];
 
-let Gcore: number = 0;  // Gscore, the score point of Ninja Quiz.
+let Gscore: number = 0;  // Gscore, the score point of Ninja Quiz.
 
 /**
  * Shuffles an array in place using the Fisher-Yates algorithm.
@@ -26,7 +26,10 @@ function shuffle(array: any[]): any[] {
 }
 
 // Randomize questions before starting
-play(shuffle([...ninjaQuiz]));
+function startQuiz() {
+    Gscore = 0;
+    play(shuffle([...ninjaQuiz]));
+}
 
 function play(quizData: QuizData): void {
     for (let i = 0; i < quizData.length; i++) {
@@ -41,12 +44,23 @@ function play(quizData: QuizData): void {
 function ask(question: string): string | null { return prompt(question); }
 
 function check(answer: string | null, correctAnswer: string): void {
-    if (answer === correctAnswer) { // Hvis Svar er lik spørsmålet
+    if (answer && answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
         alert("Congratulations you had the correct answer");
-        Gcore++;
-    } else {  alert("Fail, you've written incorrect name."); }
+        Gscore++;
+    } else {  
+        alert(`Fail, the correct answer was: ${correctAnswer}`); 
+    }
 }
 
 function gameOver(): void {	
-    if (Gcore >= 5) alert("Congratulations, you've answered" + " " + Gcore + " " + " Of 5 possible Gcore");  else alert("Game over, better luck next time, you've received:  " + Gcore + " Gcore");
+    if (Gscore >= 5) {
+        alert("Congratulations, you've answered" + " " + Gscore + " " + " Of 5 possible points");
+    } else {
+        alert("Game over, better luck next time, you've received:  " + Gscore + " points");
+    }
 }
+
+// Start the quiz after a short delay to ensure the page is visible
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(startQuiz, 500);
+});
