@@ -1,0 +1,38 @@
+@charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
+
+.btn-back
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+  padding: 0.6rem 1.2rem
+  background-color: vars.$bg-main
+  color: vars.$brand-primary
+  text-decoration: none
+  font-family: vars.$font-sans
+  font-weight: 600
+  font-size: 0.9rem
+  border: 0.0625rem solid vars.$brand-primary
+  border-radius: vars.$radius-md
+  margin: 1.5rem 2rem
+  @include mix.transition-standard(all, 0.25s)
+  box-shadow: vars.$shadow-sm
+
+  &:before
+    content: '\f104'
+    font-family: 'FontAwesome'
+    font-size: 1.1rem
+
+  &:hover
+    background-color: vars.$brand-primary
+    color: vars.$text-light
+    transform: translateX(-0.25rem)
+    box-shadow: vars.$shadow-md
+
+.back-container
+  inline-size: 100%
+  max-inline-size: 80rem
+  margin-inline: auto
+  display: flex
+  justify-content: flex-start

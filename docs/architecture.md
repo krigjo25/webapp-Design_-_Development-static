@@ -4,12 +4,6 @@ This document provides a high‑level view of the project's structure and runtim
 
 ---
 
-# Architecture Overview
-
-This document provides a high‑level view of the project's structure and runtime flow.
-
----
-
 ## Folder Layout
 
 ```text
@@ -34,7 +28,8 @@ This document provides a high‑level view of the project's structure and runtim
 ├─ scripts/                # Build and tooling scripts (e.g., build.ts)
 ├─ node_modules/           # NPM packages (generated, not part of core architecture)
 ├─ docs/                   # Documentation
-│   └─ architecture.md      # This file
+│   ├─ architecture.md      # This file
+│   └─ diagram/             # Architectural diagrams (draw.io)
 └─ README.md               # Project overview and tech stack
 ```
 
@@ -47,17 +42,13 @@ This document provides a high‑level view of the project's structure and runtim
 
 ---
 
-## Visual Diagram
+## Visual Diagrams
 
-```mermaid
-graph TD;
-    A[Browser] -->|Requests| B[index.html];
-    B --> C[CSS (styles/)]
-    B --> D[JS (scripts/main.js)]
-    D --> E[Component Modules]
-    E --> F[DOM Updates]
-    F --> A
-```
+The following diagrams provide visual insights into the system's design (viewable with [draw.io](https://app.diagrams.net/)):
+
+- **[Context Diagram](./diagram/context.drawio):** High-level view of system boundaries and actor interactions.
+- **[Architecture Diagram](./diagram/architecture.drawio):** Technical breakdown of the build pipeline and component relationships.
+- **[Runtime Flow](./diagram/architecture.drawio):** (Tab 2) Detailed view of how the browser executes the application code.
 
 ---
 

@@ -1,90 +1,92 @@
 @charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
+
 /* CSS Document */
 /*Chip*/
 h3
-  color: #D90003
+  color: vars.$brand-danger
 
 .chip
   display: inline-block
-  font-family: 'Open Sans', sans-serif
-  padding: 0 1.5625rem
+  font-family: vars.$font-sans
+  padding-inline: 1.5625rem
   block-size: 3.125rem
-  font-family: open-sans
-  font-size: 1em
+  font-size: 1rem
   line-height: 3.125rem
   border-radius: 1.5625rem
   background-color: #ccc
   cursor: pointer
 
+  img
+    float: left
+    margin: 0 0.625rem 0 -1.5625rem
+    block-size: 3.125rem
+    inline-size: 3.125rem
+    border-radius: 50%
+
 .chip-content
   display: none
   position: absolute
   background-color: #FAFAFA
-  font-family: 'Open Sans', sans-serif
-  padding: 0 1.5625rem
-  box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2)
+  font-family: vars.$font-sans
+  padding-inline: 1.5625rem
+  box-shadow: vars.$shadow-sm
   border-radius: 1.5625rem
 
 .chip:hover .chip-content
   display: inline-block
   z-index: 11
-  font-family: 'Open Sans', sans-serif
   background-color: #f1f1f1
-
-
-.chip img
-  float: left
-  margin: 0 0.625rem 0 -1.5625rem
-  block-size: 3.125rem
-  inline-size: 3.125rem
-  border-radius: 50%
 
 .design
   inline-size: 100%
-  background-color: #eff0f1
+  background-color: vars.$bg-alt
   position: relative
   z-index: 10
-  padding: 10em 1em
-  margin: 0 0
+  padding: 10rem 1rem
+
 /*Feedback*/
 legend
-  font-family: "Opensans", sans-serif
+  font-family: vars.$font-sans
   font-weight: 500
-  font-size: 2em
+  font-size: 2rem
+
 label
-  font-family: "Opensans", sans-serif
-  font-size: 1em
-  margin: 1em
-input
-  font-family: "Opensans", sans-serif
-  font-size: 1em
+  font-family: vars.$font-sans
+  font-size: 1rem
+  margin: 1rem
+
+input, textarea
+  font-family: vars.$font-sans
+  font-size: 1rem
+
 input[type="text"]
-
-  border-left: none
-  border-right: none
-  border-top: none
-  border-bottom: 0.0625rem groove black
+  border-inline: none
+  border-block: none
+  border-block-end: 0.0625rem groove black
   inline-size: 50%
-  block-size: 2em
-input[type=text]:focus
+  block-size: 2rem
+
+  &:focus
+    border: 0.0625rem solid lightblue
+
+input[type=checkbox]:focus, textarea:focus
   border: 0.0625rem solid lightblue
 
-input[type=checkbox]:focus
-  border: 0.0625rem solid lightblue
-textarea:focus
-  border: 0.0625rem solid lightblue
-
+input[type=submit], input[type=reset]
+  padding: 0.625rem
+  cursor: pointer
+  @include mix.transition-standard(background-color)
 
 input[type=submit]
-  padding: 0.625rem
   background-color: lightgreen
-input[type=submit]:hover
-  background-color: green
+  &:hover
+    background-color: green
+
 input[type=reset]
-  padding: 0.625rem
-input[type=reset]:hover
-  background-color: red
+  &:hover
+    background-color: red
+
 textarea
-  line-height: 2em
-  font-family: "Opensans", sans-serif
-  font-size: 1em
+  line-height: 2

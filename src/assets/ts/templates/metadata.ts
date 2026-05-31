@@ -1,6 +1,6 @@
 export function getMetadata(title: string, prefix: string = ''): string {
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
 <meta charset="utf-8">
 <title>${title}</title>

@@ -1,4 +1,6 @@
 @charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
 
 h1
   color: #8A0707
@@ -23,27 +25,15 @@ h1
 
 .design
   inline-size: 100%
-  background-color: #eff0f1
+  background-color: vars.$bg-alt
   position: relative
   z-index: 10
-  padding-bottom: 1.875rem
+  padding-block-end: 1.875rem
 
-@media screen and (min-inline-size: 48rem)
+@include mix.media-up(vars.$breakpoint-tablet)
   h1
-    color: #8A0707
-    margin: 0
-    padding: 0.1875rem
-    text-align: center
     font-size: 2.625rem
-    font-family: Odishi
 
   .ninjaimg
     margin: 3rem auto 1.5rem
     inline-size: 22.5rem
-
-  .design
-    inline-size: 100%
-    background-color: #eff0f1
-    position: relative
-    z-index: 10
-    padding-bottom: 1.875rem

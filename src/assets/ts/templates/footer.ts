@@ -5,7 +5,7 @@ export function getFooter(prefix: string = ''): string {
       <a href="#" class="social insta" title="Instagram"></a>
       <a href="#" class="social ello" title="Ello"></a>
     </div>
-    <p>&copy; 2014 K – Design. All rights reserved. | <a href="${prefix}ninjajs/ninja-script.html">Quiz Ninja</a></p>
+    <p>&copy; 2014 K – Design. Alle rettigheter forbeholdt. | <a href="${prefix}ninjajs/ninja-script.html">Quiz Ninja</a></p>
     </footer>
   </body>
   </html>`;

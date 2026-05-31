@@ -15,8 +15,10 @@ const distDir = path.join(rootDir, 'dist');
 // Helper to clean directory
 function cleanDir(dir: string) {
   if (fs.existsSync(dir)) {
+    console.log(`Deleting existing directory: ${dir}`);
     fs.rmSync(dir, { recursive: true, force: true });
   }
+  console.log(`Creating fresh directory: ${dir}`);
   fs.mkdirSync(dir, { recursive: true });
 }
 

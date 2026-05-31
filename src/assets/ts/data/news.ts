@@ -1,9 +1,11 @@
 // JavaScript Document
+declare var $: any;
+
 /* Toggle show-content */
-var $el: JQuery<HTMLElement>, 
-    $p: JQuery<HTMLElement>, 
-    $up: JQuery<HTMLElement>, 
-    $ps: JQuery<HTMLElement>, 
+var $el: any, 
+    $p: any, 
+    $up: any, 
+    $ps: any, 
     totalHeight: number;
 
 $(".sidebar-box .button").on("click", function(this: HTMLElement) {

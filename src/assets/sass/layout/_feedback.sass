@@ -1,24 +1,27 @@
 @charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
+
 legend
   background: transparent
-  color: #D90003
+  color: vars.$brand-danger
   font-weight: bold
+
 fieldset
   border: hidden
+
 textarea
-  background-color: #FFFFFF
-  color: #000000
-  border-bottom-left-radius: 1.875rem
-  border-bottom-right-radius: 1.875rem
-  border-top-left-radius: 1.875rem
-  border-top-right-radius: 1.875rem
-textarea:focus
-  border: #15DEFF
+  background-color: vars.$bg-main
+  color: vars.$text-dark
+  border-radius: vars.$radius-xl
+
+  &:focus
+    border: #15DEFF
 
 input[type=radio]:focus
   border: #15DEFF thick
 
 input[type=submit]
-  background-color: #f1f1f1
+  background-color: vars.$bg-alt
   padding: 1rem 1.125rem
-  color: #000000
+  color: vars.$text-dark
