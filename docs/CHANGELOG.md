@@ -6,11 +6,17 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Centralized all TypeScript interfaces and declarations into the `src/types/` directory for better project organization.
 - Extracted `LightboxState` interface to `src/types/lightbox.ts`.
+- Created `src/types/skillbar.ts` to define `ProgressOptions` and `CircularSkillBarOptions`.
+- Created `src/types/template.ts` for `TemplateFunction` and `MetadataOptions`.
+- Created `src/types/ninja.ts` for quiz-related types (`QuizQuestion`, `QuizData`).
+- Created `src/types/video.ts` for `VideoState` and `TimeFormatter`.
+- Created `src/types/generator.ts` for title generation script types.
 - Established `src/types/globals.d.ts` as the primary source for global type definitions (jQuery, $).
 
-### Fixed
-- Verified and finalized the resolution of TypeScript "cannot find name" errors in `menu.ts`.
-- Ensured all component files import shared types from the centralized `src/types/` location.
+### Changed
+- Refactored all functional logic in `src/assets/ts` to import and utilize centralized types.
+- Improved type safety across all utility and component scripts.
+- Optimized the mobile navigation and news feed logic with robust TypeScript implementations.
 
 ## [2.3.0] - 2026-05-31
 ### Added

@@ -1,3 +1,5 @@
+import { TimeFormatter } from '../../../types/video';
+
 window.addEventListener('DOMContentLoaded', () => {
     const play = document.getElementById('play') as HTMLElement | null;
     const pause = document.getElementById('pause') as HTMLElement | null;
@@ -66,7 +68,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function formattime(timeinseconds: number): string {
+    const formattime: TimeFormatter = (timeinseconds: number): string => {
         if (isNaN(timeinseconds)) return '00:00:00';
         
         const hours = Math.floor(timeinseconds / 3600);

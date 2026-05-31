@@ -1,4 +1,6 @@
-class Progress {
+import { ProgressOptions } from '../../../types/skillbar';
+
+class Progress implements ProgressOptions {
     total: number;
     color: string;
     width: number;
@@ -36,7 +38,7 @@ class Progress {
         // 1. Clear the canvas
         this.context.clearRect(0, 0, this.width, this.height);
 
-        // 2. Draw the background track (optional but good for visibility)
+        // 2. Draw the background track
         this.context.beginPath();
         this.context.arc(centerX, centerY, radius, 0, Math.PI * 2, false);
         this.context.strokeStyle = "#eeeeee";
@@ -80,7 +82,7 @@ class CircularSkillBar {
     init(): void { this.progress(); }
 
     progress(): void {
-        this.bars.forEach((bar) => {
+        this.bars.forEach((bar: HTMLElement) => {
             const color = bar.getAttribute("data-color") || "#FE4100";
             const canvas = bar.querySelector("canvas") as HTMLCanvasElement | null;
             if (!canvas) {

@@ -1,4 +1,6 @@
-export function getFooter(prefix: string = ''): string {
+import { TemplateFunction } from '../../../types/template';
+
+export const getFooter: TemplateFunction = (prefix: string = ''): string => {
   return `<footer class="site-footer">
     <div class="social-icons">
       <a href="#" class="social fb" title="Facebook"></a>

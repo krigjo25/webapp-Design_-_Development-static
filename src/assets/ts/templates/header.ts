@@ -1,7 +1,7 @@
 import { getMetadata } from './metadata';
+import { TemplateFunction } from '../../../types/template';
 
-
-export function getHeader(prefix: string = '', title: string = 'Kriss Design / Utvikling'): string {
+export const getHeader: TemplateFunction = (prefix: string = '', title: string = 'Kriss Design / Utvikling'): string => {
   return `
 ${getMetadata(title, prefix)}
 <body>

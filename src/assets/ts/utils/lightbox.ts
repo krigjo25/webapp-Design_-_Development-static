@@ -69,11 +69,11 @@ export function showSlides(n: number, modalId: string): void {
     const modal = document.getElementById(modalId);
     if (!modal) return;
 
-    const modalSlides = modal.getElementsByClassName('modalSlide');
     const caption = modal.querySelector(".caption-text");
     const prevBtn = modal.querySelector(".prev") as HTMLElement;
     const nextBtn = modal.querySelector(".next") as HTMLElement;
     const nrDisplay = modal.querySelector(".nr") as HTMLElement;
+    const modalSlides = modal.getElementsByClassName('modalSlide');
     
     // Hide navigation if there's only one slide
     if (modalSlides.length <= 1) {
@@ -87,18 +87,12 @@ export function showSlides(n: number, modalId: string): void {
     }
 
     let slideIndex = n;
-    if (n > modalSlides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = modalSlides.length;
-    }
+    if (n > modalSlides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = modalSlides.length; }
     lightboxStates[modalId].slideIndex = slideIndex;
     
     // Hide all slides
-    for (let i = 0; i < modalSlides.length; i++) {
-        (modalSlides[i] as HTMLElement).style.display = "none";
-    }
+    for (let i = 0; i < modalSlides.length; i++) { (modalSlides[i] as HTMLElement).style.display = "none"; }
     
     // Show current slide
     if (modalSlides.length > 0) {
@@ -106,9 +100,7 @@ export function showSlides(n: number, modalId: string): void {
         
         // Update caption from the image's alt attribute inside the slide
         const img = (modalSlides[slideIndex - 1] as HTMLElement).querySelector('img');
-        if (caption && img) {
-            caption.innerHTML = img.alt || "";
-        }
+        if (caption && img) { caption.innerHTML = img.alt || ""; }
     }
 }
 

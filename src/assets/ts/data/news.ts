@@ -9,6 +9,4 @@ export function initNewsToggle(): void {
 }
 
 // Execute on load if jQuery is present
-$(document).ready(() => {
-    initNewsToggle();
-});
+$(document).ready(() => { initNewsToggle(); });

@@ -1,8 +1,10 @@
+import { QuizData, QuizQuestion } from '../../types/ninja';
+
 // Alert dialog box
 alert("Welcome to our Super Hero Quiz !");
 
 // Variable declaration
-var ninjaQuiz: string[][] = [
+const ninjaQuiz: QuizData = [
     ["What is the real Name of the character SuperGirl", "Karen Denvers"],
     ["Who is the brother of Karen Denvers?", "Clark Kent"],
     ["What is the real Name of the character Batman?", "Bruce Wayne"],
@@ -10,15 +12,16 @@ var ninjaQuiz: string[][] = [
     ["What is the real Name of the character Wonderwoman", "Dianna Prince"]
 ];
 
-var Gcore: number = 0;  // Gscore, the score point of Ninja Quiz.
+let Gcore: number = 0;  // Gscore, the score point of Ninja Quiz.
 
 play(ninjaQuiz);
 
-function play(ninjaQuiz: string[][]): void {
-    for (var i = 0; i < ninjaQuiz.length; i++) {
-        var question = ninjaQuiz[i][0];
-        var answer = ask(question);
-        check(answer, ninjaQuiz[i][1]);
+function play(quizData: QuizData): void {
+    for (let i = 0; i < quizData.length; i++) {
+        const questionData: QuizQuestion = quizData[i];
+        const question = questionData[0];
+        const answer = ask(question);
+        check(answer, questionData[1]);
     }
     gameOver();
 }
