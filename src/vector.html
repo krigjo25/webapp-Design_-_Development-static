@@ -129,21 +129,4 @@
 
 </main>
 
-<script>
-  var slideIndexCarousel = 0;
-  showSlidesCarousel();
-  function showSlidesCarousel() {
-    var i;
-    var carousel = document.getElementsByClassName("slideshow");
-    for (i = 0; i < carousel.length; i++) {
-      carousel[i].style.display = "none";
-    }
-    slideIndexCarousel++;
-    if (slideIndexCarousel > carousel.length) { slideIndexCarousel = 1; }
-    if (carousel.length > 0) {
-      carousel[slideIndexCarousel-1].style.display = "block";
-    }
-    setTimeout(showSlidesCarousel, 5000);
-  }
-</script>
 <!-- include "footer" -->
