@@ -2,7 +2,7 @@
   "name": "webapp-design-development-static",
   "version": "2.5.5",
 
-  "description": "Modernized 2014 static portfolio migrated to TypeScript and Sass with a custom Node.js build system.",
+  "description": "My very first web app from 2014, now modernized and migrated to TypeScript and Sass with a custom Node.js build system.",
   "main": "dist/index.html",
   "scripts": {
     "build": "npx tsx scripts/build.ts",
