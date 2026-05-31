@@ -1,4 +1,4 @@
-# WebApp Design & Development (2009)
+# WebApp Design & Development (2014)
 
 This repository holds the original 2009 web application I built as my first foray into web development, now modernized by migrating the codebase to TypeScript while retaining a built with vanilla HTML, SASS, and TypeScript.
 
