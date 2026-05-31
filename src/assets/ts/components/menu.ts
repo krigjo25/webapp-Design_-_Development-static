@@ -1,6 +1,4 @@
 // JavaScript Document
-declare var jQuery: any;
-
 (function($: JQueryStatic) {
 
   $(".menu-icon").on("click", function(this: HTMLElement) {

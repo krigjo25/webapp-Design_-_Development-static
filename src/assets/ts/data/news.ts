@@ -1,5 +1,4 @@
 // JavaScript Document
-declare var $: any;
 
 /* Toggle show-content */
 var $el: any, 
