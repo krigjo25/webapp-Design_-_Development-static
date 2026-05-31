@@ -17,6 +17,7 @@ export function modalOpen(modalId: string): void {
     const lightbox = document.getElementById(modalId);
     if (lightbox) {
         lightbox.style.display = "block";
+        document.body.style.overflow = "hidden"; // Prevent background scroll
         if (!lightboxStates[modalId]) {
             lightboxStates[modalId] = { slideIndex: 1 };
         }
@@ -32,6 +33,7 @@ export function modalClose(modalId: string): void {
     const lightbox = document.getElementById(modalId);
     if (lightbox) {
         lightbox.style.display = "none";
+        document.body.style.overflow = "auto"; // Restore scroll
     }
 }
 
@@ -111,6 +113,17 @@ export function showSlides(n: number, modalId: string): void {
         }
     }
 }
+
+// Global keyboard listeners
+document.addEventListener('keydown', (event) => {
+    if (event.key === "Escape") {
+        // Find all visible modals and close them
+        const visibleModals = document.querySelectorAll('.modal[style*="display: block"]');
+        visibleModals.forEach(modal => {
+            modalClose(modal.id);
+        });
+    }
+});
 
 // Initial setup for any modals present
 document.addEventListener('DOMContentLoaded', () => {

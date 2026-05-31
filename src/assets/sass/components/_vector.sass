@@ -1,89 +1,89 @@
 @charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
 
 /******************* Kriss design*******************************/
 /* Flat Gallery Layout (Flexbox) */
 
 .gallery-row
-  display: flex
+  @include mix.flex-row
   flex-wrap: wrap
   justify-content: center
-  gap: 2rem
-  margin-block: 2rem
+  gap: vars.$gap-lg
+  margin-block: vars.$gap-lg
   inline-size: 100%
 
 .gallery-item
-  flex: 1 1 calc(45% - 2rem)
-  max-inline-size: 50%
+  flex: 1 1 calc(25% - 2rem) // Decreased to 25% width (4 per row)
+  max-inline-size: 25%
   text-align: center
   cursor: pointer
+  @include mix.flex-column
+  align-items: center
   
   img
     max-inline-size: 100%
     block-size: auto
-    border-radius: 0.5rem
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1)
-    transition: transform 0.3s ease, box-shadow 0.3s ease
+    border-radius: vars.$radius-md
+    box-shadow: vars.$shadow-sm
+    @include mix.transition-standard(transform, 0.3s)
     
     &:hover
       transform: translateY(-0.25rem)
-      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15)
+      box-shadow: vars.$shadow-md
 
 .logo-row
-  display: flex
+  @include mix.flex-row
   flex-wrap: nowrap
   justify-content: center
   gap: 1.5rem
   margin-block: 1.5rem
   inline-size: 100%
   overflow-x: auto
-  padding-block-end: 1rem
+  padding-block-end: vars.$gap-md
 
 .logo-item
-  flex: 0 0 12.5rem
+  flex: 0 0 9.375rem // Decreased from 12.5rem (25% reduction)
   text-align: center
   cursor: pointer
+  @include mix.flex-column
+  align-items: center
 
   img
     max-inline-size: 100%
     block-size: auto
-    transition: transform 0.2s ease
+    @include mix.transition-standard(transform, 0.2s)
 
     &:hover
       transform: scale(1.05)
 
 .des
-  padding-block-start: 1rem
-  font-family: 'Open Sans', sans-serif
-  color: #333
-  font-size: 0.9rem
-  line-height: 1.4
-  text-align: center
-  font-style: italic
+  padding-block-start: vars.$gap-md
+  @include mix.caption-style
+  display: block
+  inline-size: 100%
 
 .design
   inline-size: 100%
-  background-color: #eff0f1
+  background-color: vars.$bg-alt
   position: relative
-  z-index: 9
-  padding-block: 2rem
+  padding-block: vars.$gap-lg
 
 .section-title
   text-align: center
   margin-block-start: 3rem
-  margin-block-end: 1rem
-  font-family: 'Awery', sans-serif
-  color: #111
-  font-size: 2rem
+  margin-block-end: vars.$gap-md
+  @include mix.heading-style(2rem, vars.$text-dark)
 
-@media only screen and (max-inline-size: 48rem)
+@include mix.media-down(vars.$breakpoint-tablet)
   .gallery-item
-    flex: 1 1 100%
-    max-inline-size: 100%
+    flex: 1 1 calc(50% - 2rem)
+    max-inline-size: 50%
   
   .logo-row
     flex-wrap: wrap
     justify-content: space-around
 
-@media only screen and (min-inline-size: 67.5rem)
+@include mix.media-up(vars.$breakpoint-large)
   .section-title
     font-size: 2.5rem

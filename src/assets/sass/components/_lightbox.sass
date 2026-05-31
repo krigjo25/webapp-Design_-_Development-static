@@ -1,4 +1,6 @@
 @charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
 
 /**
  * Shared Lightbox Styles
@@ -8,41 +10,53 @@
 .modal
   display: none
   position: fixed
-  z-index: 1000
+  z-index: 9999 // Increased to be absolutely on top
   inset: 0
-  padding-block-start: 6.25rem
+  padding-block-start: 2rem
   overflow: auto
-  background-color: rgba(0, 0, 0, 0.9)
+  background-color: vars.$bg-overlay
 
 .modal-graphics
   position: relative
   margin-inline: auto
   padding: 0
-  inline-size: 90%
-  max-inline-size: 22.5rem
+  inline-size: 95%
+  max-inline-size: 50rem // Significantly increased for closer inspection
+  @include mix.flex-column
+  align-items: center
 
 .close
-  color: #ffffff
-  position: absolute
-  inset-block-start: 0.625rem
-  inset-inline-end: 1.5625rem
-  font-size: 2.1875rem
+  color: vars.$text-light
+  position: fixed // Changed to fixed to stay visible on scroll
+  inset-block-start: 1.5rem
+  inset-inline-end: 2.5rem
+  font-size: 3.5rem // Slightly larger
   font-weight: bold
-  z-index: 1001
+  z-index: 10000 // Higher than the modal
   cursor: pointer
-  transition: color 0.3s ease
+  @include mix.transition-standard(all, 0.3s)
+  line-height: 1
+  display: flex
+  align-items: center
+  justify-content: center
+  inline-size: 4rem
+  block-size: 4rem
+  border-radius: 50%
+  background: rgba(0,0,0,0.2)
 
   &:hover, &:focus
-    color: #f5f5f5
+    color: vars.$bg-main
+    background: rgba(0,0,0,0.5)
     text-decoration: none
 
 .nr
-  color: #f5f5f5
-  font-size: 1rem
-  padding: 0.5rem 0.75rem
+  color: vars.$text-light
+  font-size: 1.1rem
+  padding: 0.5rem 1rem
   position: absolute
   inset-block-start: 0
   inset-inline-start: 0
+  z-index: 1002
 
 .modalSlide
   display: none
@@ -53,66 +67,77 @@
   img
     max-inline-size: 100%
     block-size: auto
+    display: block
+    margin-inline: auto
 
 .prev, .next
   cursor: pointer
   position: absolute
   inset-block-start: 50%
   inline-size: auto
-  padding: 1rem
+  padding: 1.5rem
   margin-block-start: -3.125rem
-  color: #ffffff
+  color: vars.$text-light
   font-weight: bold
-  font-size: 1.25rem
-  transition: 0.3s ease
+  font-size: 2.5rem
+  @include mix.transition-standard(all, 0.3s)
   user-select: none
-  z-index: 1001
+  z-index: 1003
 
   &:hover
     background-color: rgba(0, 0, 0, 0.8)
 
 .next
-  inset-inline-end: 0.625rem
-  border-radius: 0.1875rem 0 0 0.1875rem
+  inset-inline-end: 1rem
+  border-radius: vars.$radius-sm 0 0 vars.$radius-sm
 
 .prev
-  inset-inline-start: 0.625rem
-  border-radius: 0 0.1875rem 0.1875rem 0
+  inset-inline-start: 1rem
+  border-radius: 0 vars.$radius-sm vars.$radius-sm 0
 
 .caption
-  text-align: center
-  font-family: awery, sans-serif
+  inline-size: 100%
+  @include mix.flex-center
   background-color: transparent
-  padding: 0.625rem 1rem
-  color: #f5f5f5
-  z-index: 1001
-  font-size: 0.9rem
-  font-style: italic
+  padding: 1.5rem 1rem
+  color: vars.$text-light
+  z-index: 1004
+  text-align: center
+
+  // Ensure ALL possible caption elements are centered and italicized
+  p, .caption-text, &
+    @include mix.caption-style
+    color: vars.$text-light
+    margin: 0
+    display: block
 
 .ms
   opacity: 0.6
   inline-size: 100%
   display: inline-block
-  transition: opacity 0.3s ease
+  @include mix.transition-standard(opacity, 0.3s)
 
   &.active, &:hover
     opacity: 1
 
-@media only screen and (min-inline-size: 67.5rem)
+@include mix.media-up(vars.$breakpoint-large)
   .modal
-    padding-block-start: 3.125rem
+    padding-block-start: 1rem
 
   .modal-graphics
-    max-inline-size: 75rem
+    max-inline-size: 90vw // Desktop fill
+    max-block-size: 85vh
 
   .modalSlide img
-    max-inline-size: 80%
+    max-block-size: 80vh // Prevent overflow on desktop
+    inline-size: auto
+    margin-inline: auto
 
   .prev, .next
-    font-size: 2rem
+    font-size: 4rem
 
   .next
-    inset-inline-end: 3.125rem
+    inset-inline-end: 3rem
 
   .prev
-    inset-inline-start: 3.125rem
+    inset-inline-start: 3rem

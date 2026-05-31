@@ -3,45 +3,44 @@
 
 <main class="design">
 
-  <h2 class="section-title">Photoshoots</h2>
+  <div class="back-container">
+    <a href="portfolio.html" class="btn-back">Gå tilbake</a>
+  </div>
+
+  <h2 class="section-title">Fotografering</h2>
 
   <div class="gallery-row">
-    <figure class="gallery-item" onclick="currentSwitch(1, 'photo-desert-overlay')">
-      <img src="assets/media/images/dummy/Desert.jpg" alt="Desert (2014)">
-      <figcaption class="des">Desert (2014)</figcaption>
+    <figure class="gallery-item" onclick="currentSwitch(1, 'dummy-collection-overlay')">
+      <img src="assets/media/images/dummy/Desert.jpg" alt="Dummy-bilder (2014)">
+      <figcaption class="des">Dummy-bilder (2014)</figcaption>
     </figure>
-    <section id="photo-desert-overlay" class="modal">
-      <span class="close" onclick="modalClose('photo-desert-overlay')">×</span>
-      <div class="modal-graphics">
-        <figure class="modalSlide"><img src="assets/media/images/dummy/Desert.jpg" alt="Desert (2014)"></figure>
-        <figcaption class="caption"><p class="caption-text"></p></figcaption>
-      </div>
-    </section>
-
-    <figure class="gallery-item" onclick="currentSwitch(1, 'photo-hydrangeas-overlay')">
-      <img src="assets/media/images/dummy/Hydrangeas.jpg" alt="Hydrangeas (2014)">
-      <figcaption class="des">Hydrangeas (2014)</figcaption>
-    </figure>
-    <section id="photo-hydrangeas-overlay" class="modal">
-      <span class="close" onclick="modalClose('photo-hydrangeas-overlay')">×</span>
-      <div class="modal-graphics">
-        <figure class="modalSlide"><img src="assets/media/images/dummy/Hydrangeas.jpg" alt="Hydrangeas (2014)"></figure>
-        <figcaption class="caption"><p class="caption-text"></p></figcaption>
-      </div>
-    </section>
-
-    <figure class="gallery-item" onclick="currentSwitch(1, 'photo-jellyfish-overlay')">
-      <img src="assets/media/images/dummy/Jellyfish.jpg" alt="Jellyfish (2014)">
-      <figcaption class="des">Jellyfish (2014)</figcaption>
-    </figure>
-    <section id="photo-jellyfish-overlay" class="modal">
-      <span class="close" onclick="modalClose('photo-jellyfish-overlay')">×</span>
-      <div class="modal-graphics">
-        <figure class="modalSlide"><img src="assets/media/images/dummy/Jellyfish.jpg" alt="Jellyfish (2014)"></figure>
-        <figcaption class="caption"><p class="caption-text"></p></figcaption>
-      </div>
-    </section>
   </div>
+
+  <!-- Dummy Images Collection Modal -->
+  <section id="dummy-collection-overlay" class="modal">
+    <span class="close" onclick="modalClose('dummy-collection-overlay')">×</span>
+    <div class="modal-graphics">
+      <figure class="modalSlide">
+        <div class="nr">1 / 3</div>
+        <img src="assets/media/images/dummy/Desert.jpg" alt="Ørken (2014)">
+      </figure>
+      <figure class="modalSlide">
+        <div class="nr">2 / 3</div>
+        <img src="assets/media/images/dummy/Hydrangeas.jpg" alt="Hortensia (2014)">
+      </figure>
+      <figure class="modalSlide">
+        <div class="nr">3 / 3</div>
+        <img src="assets/media/images/dummy/Jellyfish.jpg" alt="Manet (2014)">
+      </figure>
+
+      <a class="prev" onclick="toggleSwitch(-1, 'dummy-collection-overlay')">❮</a>
+      <a class="next" onclick="toggleSwitch(1, 'dummy-collection-overlay')">❯</a>
+      
+      <figcaption class="caption">
+        <p class="caption-text"></p>
+      </figcaption>
+    </div>
+  </section>
 
 </main>
 
