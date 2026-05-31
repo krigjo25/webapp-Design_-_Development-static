@@ -1,90 +1,99 @@
 @charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
 
 .read-article
   display: none
 
 .hidden-more
   opacity: 0
-  color: #333333
-  font-family: 'Open Sans', sans-serif
+  color: vars.$text-main
+  font-family: vars.$font-sans
   font-weight: normal
   max-block-size: 0
-  font-size: 1rem
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1)
+  font-size: vars.$size-base
+  @include mix.transition-standard(all, 0.35s)
   overflow: hidden
 
 .read-article:checked ~ .read-more-wrap .hidden-more
   opacity: 1
-  max-block-size: 20rem
-  margin-top: 1rem
+  max-block-size: 40rem
+  margin-block-start: vars.$gap-md
 
 .read-article ~ .toggle:before
-  content: 'Read more'
+  content: 'Les mer'
 
 .read-article:checked ~ .toggle:before
-  content: 'Read less'
+  content: 'Vis mindre'
 
 .news-feed
-  display: flex
-  flex-direction: column
-  align-items: center
+  display: grid
+  grid-template-columns: repeat(3, 1fr) // Set 3 columns as base
   gap: 2.5rem
   padding: 3rem 1.5rem
-  max-inline-size: 46.875rem
-  margin: 0 auto
+  max-inline-size: 90rem
+  margin-inline: auto
+  inline-size: 100%
+
+  @include mix.media-down(vars.$breakpoint-tablet) // Switch to 1 column on smaller screens
+    grid-template-columns: 1fr
 
 .news
   inline-size: 100%
-  background: rgba(255, 255, 255, 0.8)
-  backdrop-filter: blur(0.75rem)
-  -webkit-backdrop-filter: blur(0.75rem)
-  border: 0.0625rem solid rgba(255, 255, 255, 0.6)
-  border-radius: 1.25rem
-  padding: 2.25rem
-  box-shadow: 0 0.625rem 1.875rem -0.625rem rgba(0, 0, 0, 0.08), 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.03)
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1)
-  display: flex
-  flex-direction: column
+  @include mix.glass-card
+  padding: 2rem
+  @include mix.card-hover
+  @include mix.flex-column
   gap: 1.2rem
   text-align: left
 
   &:hover
-    transform: translateY(-0.3125rem)
-    box-shadow: 0 1.25rem 2.5rem -0.9375rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(12, 168, 136, 0.2)
+    box-shadow: vars.$shadow-hover, 0 0 0 0.0625rem rgba(12, 168, 136, 0.2)
     background: rgba(255, 255, 255, 0.9)
 
   .news-header
-    border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.08)
-    padding-bottom: 0.8rem
-    display: flex
-    flex-direction: column
+    border-block-end: 0.0625rem solid rgba(0, 0, 0, 0.08)
+    padding-block-end: 0.8rem
+    @include mix.flex-column
     gap: 0.25rem
 
     h3
-      font-family: 'Awery', sans-serif
-      font-size: 1.45rem
-      color: #117
-      margin: 0
-      letter-spacing: -0.01em
-      line-height: 1.2
-      font-weight: 700
+      @include mix.heading-style(1.3rem)
+      min-block-size: 4rem
+      display: flex
+      align-items: center
 
     .news-meta
-      font-family: 'Open Sans', sans-serif
-      font-size: 0.825rem
-      color: #888888
+      font-family: vars.$font-sans
+      font-size: vars.$size-meta
+      color: vars.$text-muted
       font-weight: 500
 
   .news-body
-    font-family: 'Open Sans', sans-serif
-    color: #444
+    font-family: vars.$font-sans
+    color: vars.$text-body
     font-size: 0.925rem
-    line-height: 1.65
+    line-height: 1.6
+    @include mix.flex-column
+    gap: 1rem
+    flex: 1
 
     .summary
       margin: 0
-      color: #222
-      font-weight: 600
+      color: vars.$text-dark
+      font-weight: 700
+      font-size: 1.05rem
+
+    .ingress
+      margin: 0
+      color: #555
+      font-weight: 500
+      font-style: italic
+      font-size: vars.$size-ingress
+      line-height: 1.5
+
+    p
+      margin: 0
 
   .toggle
     cursor: pointer
@@ -92,18 +101,17 @@
     align-items: center
     justify-content: center
     padding: 0.45rem 1.35rem
-    color: #0ca888
-    font-size: 0.825rem
+    color: vars.$brand-primary
+    font-size: vars.$size-meta
     font-weight: 600
-    line-height: 1
-    border: 0.09375rem solid #0ca888
-    border-radius: 2rem
-    transition: all 0.25s ease
-    margin-top: 1rem
+    border: 0.09375rem solid vars.$brand-primary
+    border-radius: vars.$radius-pill
+    @include mix.transition-standard(all, 0.25s)
+    margin-block-start: auto
     background: transparent
     inline-size: fit-content
 
     &:hover
-      background: #0ca888
-      color: #ffffff
+      background: vars.$brand-primary
+      color: vars.$text-light
       transform: translateY(-0.0625rem)
