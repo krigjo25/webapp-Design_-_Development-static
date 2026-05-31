@@ -1,0 +1,64 @@
+@charset "utf-8"
+@use "variables" as vars
+
+// --- Layout Mixins ---
+@mixin flex-column
+  display: flex
+  flex-direction: column
+
+@mixin flex-row
+  display: flex
+  flex-direction: row
+
+@mixin flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+@mixin container-main
+  max-inline-size: 80rem
+  margin: 0 auto
+  padding: 4rem 2rem
+
+// --- Component Mixins ---
+@mixin glass-card($bg: rgba(255, 255, 255, 0.8), $blur: 0.75rem)
+  background: $bg
+  backdrop-filter: blur($blur)
+  -webkit-backdrop-filter: blur($blur)
+  border: 0.0625rem solid rgba(255, 255, 255, 0.6)
+  border-radius: vars.$radius-lg
+  box-shadow: vars.$shadow-lg
+
+@mixin card-hover
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease
+  &:hover
+    transform: translateY(-0.3125rem)
+    box-shadow: vars.$shadow-hover
+
+@mixin transition-standard($prop: all, $time: 0.3s)
+  transition: $prop $time ease
+
+// --- Typography Mixins ---
+@mixin heading-style($size: 2rem, $color: vars.$brand-accent)
+  font-family: vars.$font-heading
+  color: $color
+  font-size: $size
+  letter-spacing: -0.01em
+  line-height: 1.2
+  font-weight: 700
+
+@mixin caption-style
+  font-family: vars.$font-sans
+  font-size: vars.$size-caption
+  font-style: italic
+  text-align: center
+  color: vars.$text-main
+
+// --- Responsive Mixins ---
+@mixin media-up($breakpoint)
+  @media only screen and (min-inline-size: $breakpoint)
+    @content
+
+@mixin media-down($breakpoint)
+  @media only screen and (max-inline-size: $breakpoint)
+    @content
