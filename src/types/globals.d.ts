@@ -1,6 +1,3 @@
 import JQueryStatic from 'jquery';
 
-declare global {
-  const jQuery: JQueryStatic;
-  const $: JQueryStatic;
-}
+declare global { const $: JQueryStatic; const jQuery: JQueryStatic; }

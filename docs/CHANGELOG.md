@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.0] - 2026-05-31
+### Added
+- Centralized all TypeScript interfaces and declarations into the `src/types/` directory for better project organization.
+- Extracted `LightboxState` interface to `src/types/lightbox.ts`.
+- Established `src/types/globals.d.ts` as the primary source for global type definitions (jQuery, $).
+
+### Fixed
+- Verified and finalized the resolution of TypeScript "cannot find name" errors in `menu.ts`.
+- Ensured all component files import shared types from the centralized `src/types/` location.
+
 ## [2.3.0] - 2026-05-31
 ### Added
 - Created `src/types/globals.d.ts` to provide robust global type definitions for **jQuery** and **$**, resolving persistent editor and compiler errors.

@@ -3,9 +3,7 @@
  * Supports multiple independent modals on the same page.
  */
 
-interface LightboxState {
-    slideIndex: number;
-}
+import { LightboxState } from '../../../types/lightbox';
 
 const lightboxStates: { [key: string]: LightboxState } = {};
 

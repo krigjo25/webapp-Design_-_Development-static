@@ -4,8 +4,6 @@
  * This file is maintained for potential future JS-driven enhancements.
  */
 
-declare var $: any;
-
 export function initNewsToggle(): void {
     // Logic for any future JS-driven news interactions
 }
