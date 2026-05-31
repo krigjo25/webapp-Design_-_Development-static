@@ -5,16 +5,28 @@ alert("Welcome to our Super Hero Quiz !");
 
 // Variable declaration
 const ninjaQuiz: QuizData = [
-    ["What is the real Name of the character SuperGirl", "Karen Denvers"],
     ["Who is the brother of Karen Denvers?", "Clark Kent"],
     ["What is the real Name of the character Batman?", "Bruce Wayne"],
     ["What is the real Name of the character Spiderman", "Peter Parker"],
+    ["What is the real Name of the character SuperGirl", "Karen Denvers"],
     ["What is the real Name of the character Wonderwoman", "Dianna Prince"]
 ];
 
 let Gcore: number = 0;  // Gscore, the score point of Ninja Quiz.
 
-play(ninjaQuiz);
+/**
+ * Shuffles an array in place using the Fisher-Yates algorithm.
+ */
+function shuffle(array: any[]): any[] {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Randomize questions before starting
+play(shuffle([...ninjaQuiz]));
 
 function play(quizData: QuizData): void {
     for (let i = 0; i < quizData.length; i++) {
