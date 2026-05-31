@@ -10,7 +10,7 @@
 .modal
   display: none
   position: fixed
-  z-index: 10000 // Substantially higher than header/main
+  z-index: 999998 // Extremely high
   inset: 0
   padding-block-start: 2rem
   overflow: auto
@@ -32,7 +32,7 @@
   inset-inline-end: 2.5rem
   font-size: 3.5rem
   font-weight: bold
-  z-index: 10001 // Topmost element
+  z-index: 999999 // Absolutely topmost
   cursor: pointer
   @include mix.transition-standard(all, 0.3s)
   line-height: 1

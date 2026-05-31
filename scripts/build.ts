@@ -6,7 +6,6 @@ import * as sass from 'sass';
 import { getMetadata } from '../src/assets/ts/templates/metadata';
 import { getHeader } from '../src/assets/ts/templates/header';
 import { getFooter } from '../src/assets/ts/templates/footer';
-import { getOfflineStylesheets } from '../src/assets/ts/templates/offlineStylesheets';
 
 const rootDir = path.join(__dirname, '..');
 const srcDir = path.join(rootDir, 'src');
