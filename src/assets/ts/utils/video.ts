@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (!video || !play || !pause || !seek || !volume || !playback) { return; }
 
     function clickhandler(event: Event): void {
-        const target = event.target as HTMLElement;
+        const target = event.currentTarget as HTMLElement;
         const id = target.id;
         if (video && play && pause) {
             if (id === 'play') {
@@ -67,18 +67,17 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function formattime(timeinseconds: number): string {
-        var zeroes = '0', hours, minutes, seconds, time;
-        time = new Date(0, 0, 0, 0, 0, timeinseconds, 0);
-
-        hours   = time.getHours();
-        minutes = time.getMinutes();
-        seconds = time.getSeconds();
+        if (isNaN(timeinseconds)) return '00:00:00';
         
-        const hoursStr = (zeroes + hours).slice(-2);
-        const minutesStr = (zeroes + minutes).slice(-2);
-        const secondsStr = (zeroes + seconds).slice(-2);
+        const hours = Math.floor(timeinseconds / 3600);
+        const minutes = Math.floor((timeinseconds % 3600) / 60);
+        const seconds = Math.floor(timeinseconds % 60);
         
-        return hoursStr + ':' + minutesStr + ':' + secondsStr;
+        const h = hours < 10 ? '0' + hours : hours;
+        const m = minutes < 10 ? '0' + minutes : minutes;
+        const s = seconds < 10 ? '0' + seconds : seconds;
+        
+        return h + ':' + m + ':' + s;
     }
 
     function timeupdatehandler(event: Event): void {
@@ -91,9 +90,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function seekhandler(event: Event): void {
         const target = event.target as HTMLInputElement;
-        if (video && playback) {
+        if (video) {
             video.currentTime = parseFloat(target.value);
-            playback.value = target.value;
+            if (playback) {
+                playback.value = target.value;
+            }
         }
     }
 
@@ -104,8 +105,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    play.addEventListener('mousedown', clickhandler);
-    pause.addEventListener('mousedown', clickhandler);
+    play.addEventListener('click', clickhandler);
+    pause.addEventListener('click', clickhandler);
 
     video.addEventListener('durationchange', updateduration);
     video.addEventListener('durationchange', updateseekmax);
@@ -119,6 +120,6 @@ window.addEventListener('DOMContentLoaded', () => {
     video.addEventListener('timeupdate', updateseek);
     video.addEventListener('timeupdate', updateplayback);
 
-    seek.addEventListener('change', seekhandler);
-    volume.addEventListener('change', volumehandler);
+    seek.addEventListener('input', seekhandler);
+    volume.addEventListener('input', volumehandler);
 });

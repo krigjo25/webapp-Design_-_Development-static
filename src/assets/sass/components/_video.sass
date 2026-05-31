@@ -1,37 +1,45 @@
 @charset "utf-8"
 /* CSS Document designed by Project media  */
 /*               The Media player       */
-@import url(http://projectmedia.net23.net/pm/fonts/font-awesome/font/font-awesome.min.css)
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)
 
-*
-  box-sizing: border-box
+.hidden
+  display: none !important
+
+.video-container
+  @include mix.flex-column
+  align-items: center
+  margin-block: 2rem
+  margin-inline: auto
+  inline-size: 100%
 
 #media_player
-  inline-size: 14.875rem
-  block-size: 18.6875rem
+  inline-size: 100%
+  max-inline-size: 25rem
+  block-size: auto
+  min-block-size: 20rem
   position: relative
-  font: normal 0.625rem / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
-  background: #111111
-  margin-left: 3.5em
+  font: normal 0.625rem / 1 vars.$font-mono
+  background: vars.$bg-dark
   color: #DAE7ED
-  top: 1.5em
+  border-radius: vars.$radius-md
+  overflow: hidden
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2)
 
-#media_player video
-  inline-size: 14.25rem
-  block-size: 13.125rem
-  margin-left: 0.3125rem
-  position: relative
-  z-index: 1
-  display: block
-  top: 0.8125rem
-
+  video
+    inline-size: 100%
+    block-size: auto
+    display: block
+    background: #000
 
 [id=playback]
-  inline-size: 98%
+  inline-size: 100%
   vertical-align: -0.2em
   background: #DAE7ED
-  block-size: 0.75rem
-  display: inline-block
+  block-size: 0.5rem
+  display: block
   border: none
 
 [id=duration]::before
@@ -40,21 +48,20 @@
 [id=elapsed], [id=duration]
   display: inline-block
   text-align: right
-  padding-top: 0.0625rem
+  padding-block-start: 0.2rem
+  font-size: 0.8rem
 
 [id=video_time]
   inline-size: 100%
-  margin-left: 1%
-  position: absolute
-  top: 13.5rem
+  padding: 0.5rem 1rem
+  @include mix.flex-row
+  justify-content: flex-end
+  align-items: center
+  gap: 0.5rem
 
 [id=video_seek]
-  position: absolute
-  z-index: 3
-  inline-size: 99%
-  left: 0
-  top: 13.5rem
-
+  inline-size: 100%
+  padding: 0
 
 [id=seek]
   -webkit-appearance: none
@@ -62,56 +69,49 @@
   -ms-appearance: none
   appearance: none
   inline-size: 100%
-  position: absolute
-  left: 0
   outline: none
-  padding: 0.125rem 0 /* For Internet Explorer's sake */
-  block-size: 0.625rem
-  background-color: transparent
+  block-size: 0.5rem
+  background-color: rgba(255,255,255,0.1)
+  cursor: pointer
 
 [id=play], [id=pause], label[for=volume]
   font-family: 'FontAwesome'
-  font-size: 2em
+  font-size: 1.5rem
 
 label[for=volume]
-  font-size: 2.8em
+  font-size: 1.8rem
   display: inline-block
-  vertical-align: baseline
-
+  vertical-align: middle
 
 #media_player button
   text-align: center
-  inline-size: 2.625rem
-  block-size: 2.5625rem
-  background: #222
+  inline-size: 3rem
+  block-size: 3rem
+  background: transparent
   border: 0
   padding: 0
   color: #DAE7ED
   cursor: pointer
+  @include mix.transition-standard(color, 0.2s)
 
-#media_player button:hover
-  outline: none
-  color: #410F52
-#media_player button:focus
-  outline: none
+  &:hover
+    color: vars.$brand-secondary
 
 [id=video_controls]
-  border-top: 1.25rem solid #222
-  margin-top: 1.75rem
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 0.5rem 1rem
+  background: #222
+
+  span
+    display: flex
+    align-items: center
+    gap: 0.5rem
 
 [id=volume]
-  inline-size: 6.25rem
-  margin-top: -0.8125rem
-
-[id=video_controls] span label
-  display: inline-block
-  margin-top: -0.9375rem
-
-// =============================================================
-// In this section we are using experimental, browser-specific
-// properties. Because they're experimental, behavior may change.
-// To date, however, they're the only way to create custom controls.
-// =============================================================
+  inline-size: 5rem
+  cursor: pointer
 
 [type="range"]
   -webkit-appearance: none
@@ -119,396 +119,42 @@ label[for=volume]
 
 /* Webkit-only progress bar styles. */
 [id=playback]::-webkit-progress-bar
-  background-color: #741b93
-  opacity: 0.5
+  background-color: #333
 
 [id=playback]::-webkit-progress-value
-  background-color: #410F52
-  opacity: 1
+  background-color: vars.$brand-secondary
 
 [id=seek]::-webkit-slider-thumb,
 [id=volume]::-webkit-slider-thumb
   -webkit-appearance: none
-  inline-size: 0.0625rem
-  block-size: 0.9375rem
-  border-radius: 10%
-  background: #FF7014
-  margin-top: -0.25rem
+  inline-size: 1rem
+  block-size: 1rem
+  border-radius: 50%
+  background: vars.$brand-secondary
+  box-shadow: 0 0 0.2rem rgba(0,0,0,0.5)
 
-[id=volume]::-webkit-slider-thumb
-  margin-top: -0.25rem
-  inline-size: 0.625rem
-  block-size: 0.625rem
-
-[id=volume]::-webkit-slider-runnable-track
-  background: #DAE7ED
-  block-size: 0.125rem
-  margin-top: 0
-
-
-
-/* Firefox-only progress bar styles */
-progress[id=playback]
-  -moz-border-top-colors: rgba(0,0,0,0)
-  -moz-border-right-colors: rgba(0,0,0,0)
-  -moz-border-bottom-colors: rgba(0,0,0,0)
-  -moz-border-left-colors: rgba(0,0,0,0)
-  background: #741b93
-
-
-/* Firefox-only range bar styles */
-
-::-moz-range-track
-  border-top: none
-  border-bottom: none
+.style-video
   border: 0
-
-[id=seek]::-moz-range-track
-  background: transparent
-
-[id=volume]::-moz-range-track
-  background: #4B4F52
-
-::-moz-range-thumb
-  -moz-appearance: none !important
-  border: 0
-  border-radius: 16%
-  background-image: none
-  background-color: #FF7014
-
-[id=seek]::-moz-range-thumb
-  padding: 0.25rem
-
-::-moz-progress-bar
-  background: #410F52
-
-/* Microsoft-only range bar styles */
-::-ms-thumb
-  background-image: snone
-  background-color: #FF7014
-  padding: 0.125rem 0
-  border-radius: 100%
-  vertical-align: bottom
-
-
-[id=volume]::-ms-track
-  background-color: #666
-  block-size: 0.625rem
-  margin: 1.0625rem 0 0 0.3125rem
-  block-size: 0.1875rem
-  border: 0.0625rem solid #222
-
-[id=playback]::-ms-fill
-  background: #410F52
-
-[id=playback]::-ms-ticks-after
-  color: transparent
-
-[id=seek]::-ms-track,
-[id=seek]::-ms-fill-lower,
-[id=seek]::-ms-fill-upper,
-[id=volume]::-ms-fill-upper,
-::-ms-ticks-after,
-::-ms-ticks-before,
-[id=volume]::-ms-ticks-after,
-[id=volume]::-ms-ticks-before
-  background: transparent
-  border: 0
-  color: transparent
-
-[id=seek]::-ms-thumb
-  border-color: #FF7014
-  border-width: 0.125rem
-  border-style: solid
-  margin-top: -0.3125rem
-  padding-bottom: 0.625rem
-[id=volume]::-ms-fill-lower
-  background: transparent
-video
-
-  inline-size: 21.875rem
-  block-size: 12.5rem
-
-
-/*                    Description                     */
-hr.style-video
-  border: 0
-  inline-size: 5.625rem
+  inline-size: 5rem
   block-size: 0.0625rem
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))
+  margin-block: 1rem
+  margin-inline: auto
 
-
-.des
-  font-family: "Open sans", Georgia, Sans-serif
-  inline-size: 12.5rem
-  padding: 0.3125rem
-  border: none
-  display: block
-  margin-left: 13%
-  margin-top: 1.5em
+.video-caption
+  margin-block-start: 1rem
+  font-family: vars.$font-sans
+  font-size: vars.$size-caption
+  font-style: italic
+  color: vars.$text-main
   text-align: center
-.error
-  font-family: "Open Sans", georgia, Sans-serif
+
 .design
   inline-size: 100%
-  background-color: #eff0f1
+  background-color: vars.$bg-alt
   position: relative
-  z-index: 10
-  padding-bottom: 1.875rem 1.25rem
-/* Media Query*/
-@media only screen and (min-inline-size: 67.5rem)
+  padding: 2rem 1rem
 
+@include mix.media-up(vars.$breakpoint-tablet)
   #media_player
-    inline-size: 22.5rem
-    block-size: 24.125rem
-    margin-left: 1rem
-    position: relative
-    font: normal 0.625rem / 1 'Helvetica Neue','Liberation Sans',helvetica,arial,sans-serif
-    background: #111111
-    color: #DAE7ED
-    top: 1.5em
-
-  #media_player video
-    inline-size: 21.875rem
-    block-size: 18.75rem
-    margin-top: 0.625rem
-    margin-left: 0.3125rem
-    position: relative
-    z-index: 1
-    display: block
-
-  /* Progress bar, background before : track*/
-  [id=playback]
-    inline-size: 99%
-    vertical-align: -0.2em
-    background: #DAE7ED
-    block-size: 0.625rem
-    display: inline-block
-    border: none
-
-  [id=duration]::before
-    content: ' / '
-  /* Start        End of v*/
-  [id=elapsed], [id=duration]
-    display: inline-block
-    text-align: right
-    padding-top: 0.0625rem
-
-  [id=video_time]
-    inline-size: 100%
-    margin-left: 1%
-    position: absolute
-    top: 19.5625rem
-
-  [id=video_seek]
-    position: absolute
-    z-index: 3
-    inline-size: 99%
-    left: 0
-    top: 18.8125rem
-
-
-  [id=seek]
-    -webkit-appearance: none
-    -moz-appearance: none
-    -ms-appearance: none
-    appearance: none
-    inline-size: 100%
-    position: absolute
-    left: 0
-    outline: none
-    padding: 0.125rem 0 /* For Internet Explorer's sake */
-    block-size: 2.3125rem
-    background-color: transparent
-
-  [id=play], [id=pause], label[for=volume]
-    font-family: 'FontAwesome'
-    font-size: 2em
-
-  label[for=volume]
-    font-size: 2.8em
-    display: inline-block
-    vertical-align: baseline
-
-  /* The play / pause button for the media player*/
-  #media_player button
-    text-align: center
-    inline-size: 2.625rem
-    block-size: 2.5625rem
-    background: #222
-    border: 0
-    padding: 0
-    color: #DAE7ED
-    cursor: pointer
-
-  #media_player button:hover
-    outline: none
-    color: #410F52
-  #media_player button:focus
-    outline: none
-  /*  End of the play pause button */
-  [id=video_controls]
-    border-top: 1.25rem solid #222
-    margin-top: 1.5625rem
-
-  [id=volume]
-    inline-size: 6.25rem
-    margin-top: -0.8125rem
-
-  [id=video_controls] span label
-    display: inline-block
-    margin-top: -0.9375rem
-
-  // =============================================================
-  // In this section we are using experimental, browser-specific
-  // properties. Because they're experimental, behavior may change.
-  // To date, however, they're the only way to create custom controls.
-  // =============================================================
-
-  [type="range"]
-    -webkit-appearance: none
-    vertical-align: middle
-  /*  Chrome, Opera & Safari */
-  /* Webkit-only progress bar styles. */
-  [id=playback]::-webkit-progress-bar
-    background-color: #DAE7ED
-    opacity: 0.5
-
-  [id=playback]::-webkit-progress-value
-    background-color: #0475DF
-    opacity: 1
-  /* Seeker slider*/
-
-  [id=seek]::-webkit-slider-thumb,
-  [id=volume]::-webkit-slider-thumb
-    -webkit-appearance: none
-    inline-size: 0.0625rem
-    block-size: 0.875rem
-    background: #FF7014
-    margin-top: -0.25rem
-
-  [id=volume]::-webkit-slider-thumb
-    margin-top: -0.25rem
-    inline-size: 0.625rem
-    border-radius: 100%
-    block-size: 0.625rem
-
-  [id=volume]::-webkit-slider-runnable-track
-    background: #DAE7ED
-    block-size: 0.125rem
-    margin-top: 0
-    opacity: 0.6
-
-  /* Mozilla firefox */
-
-  /* Firefox-only progress bar styles */
-  progress[id=playback]
-    -moz-border-top-colors: rgba(0,0,0,0)
-    -moz-border-right-colors: rgba(0,0,0,0)
-    -moz-border-bottom-colors: rgba(0,0,0,0)
-    -moz-border-left-colors: rgba(0,0,0,0)
-    background: #DAE7ED
-    opacity: 0.5
-
-
-  /* Firefox-only range bar styles */
-
-  ::-moz-range-track
-    border-top: none
-    border-bottom: none
-    border: 0
-
-  [id=seek]::-moz-range-track
-    background: transparent
-  /*Volume range background*/
-  [id=volume]::-moz-range-track
-    background: #DAE7ED
-    opacity: 0.5
-  /*Range dots*/
-  ::-moz-range-thumb
-    -moz-appearance: none !important
-    border: 0
-    inline-size: 0.1875rem
-    left: -0.3125rem !important
-    cursor: pointer
-    background-image: none
-    background-color: #f5f5f5
-
-  [id=seek]::-moz-range-thumb
-    padding: 0
-  /* progress after */
-  ::-moz-progress-bar
-    background: #0465C2
-  /* Microsoft Explorer*/
-  /* Microsoft-only range bar styles */
-  ::-ms-thumb
-    background-image: none
-    background-color: #FF7014
-    padding: 0.125rem 0
-    border-radius: 100%
-    vertical-align: bottom
-
-
-  [id=volume]::-ms-track
-    background-color: #666
-    block-size: 0.625rem
-    margin: 1.0625rem 0 0 0.3125rem
-    block-size: 0.1875rem
-    border: 0.0625rem solid #222
-
-  [id=playback]::-ms-fill
-    background: #410F52
-
-  [id=playback]::-ms-ticks-after
-    color: transparent
-
-  [id=seek]::-ms-track,
-  [id=seek]::-ms-fill-lower,
-  [id=seek]::-ms-fill-upper,
-  [id=volume]::-ms-fill-upper,
-  ::-ms-ticks-after,
-  ::-ms-ticks-before,
-  [id=volume]::-ms-ticks-after,
-  [id=volume]::-ms-ticks-before
-    background: transparent
-    border: 0
-    color: transparent
-  /*Seeker thumb*/
-  [id=seek]::-ms-thumb
-    border-color: #FF7014
-    border-width: 0
-    margin-top: -0.4375rem
-
-    padding-bottom: 0.625rem
-  [id=volume]::-ms-fill-lower
-    background: transparent
-  video
-
-    inline-size: 21.875rem
-    block-size: 12.5rem
-
-
-  /*                    Description                     */
-  hr.style-video
-    border: 0
-    inline-size: 5.625rem
-    block-size: 0.0625rem
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
-
-
-  .des
-    font-family: "Open sans", Georgia, Sans-serif
-    inline-size: 12.5rem
-    padding: 0.3125rem
-    border: none
-    display: block
-    margin-left: 6%
-    margin-top: 1.5em
-    text-align: center
-  .error
-    font-family: "Open Sans", georgia, Sans-serif
-  .design
-    inline-size: 100%
-    background-color: #eff0f1
-    position: relative
-    z-index: 9
+    max-inline-size: 40rem

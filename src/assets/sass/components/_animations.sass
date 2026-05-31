@@ -1,0 +1,51 @@
+@charset "utf-8"
+@use "../base/variables" as vars
+@use "../base/mixins" as mix
+
+.animations-page
+  @include mix.flex-column
+  align-items: center
+  gap: vars.$gap-xl
+  padding-block: vars.$gap-xl
+  inline-size: 100%
+
+.animation-hero
+  inline-size: 100%
+  max-inline-size: 60rem
+  margin: 0 auto
+  @include mix.flex-center
+  overflow: hidden
+  border-radius: vars.$radius-lg
+  box-shadow: vars.$shadow-lg
+
+  .animation-hero-img
+    inline-size: 100%
+    block-size: auto
+    display: block
+
+.animation-section
+  @include mix.flex-column
+  align-items: center
+  gap: vars.$gap-md
+  inline-size: 100%
+
+.animation-figure
+  @include mix.flex-center
+  flex-direction: column
+  inline-size: 100%
+  max-inline-size: 40rem
+  margin: 0 auto
+  background: vars.$bg-main
+  padding: vars.$gap-md
+  border-radius: vars.$radius-lg
+  box-shadow: vars.$shadow-md
+
+  .animation-img
+    max-inline-size: 100%
+    block-size: auto
+    border-radius: vars.$radius-md
+
+.section-title
+  @include mix.heading-style(2rem)
+  text-align: center
+  margin-block-end: vars.$gap-sm

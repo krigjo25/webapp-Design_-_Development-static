@@ -1,35 +1,39 @@
 <!-- include "header" -->
 
-<script src="assets/ts/video.js"></script>
+<script src="assets/ts/utils/video.js"></script>
 <main class="design">
-    <section id="media_player">
-        <video poster="assets/portfolio/media/OurStory/pm.png" preload="metadata" title="Our Story">
-            <source src="assets/portfolio/media/OurStory/Our stoy_1.webm" type="video/webm">
-            <source src="./video_file.webm" type="video/webm">
-        </video>
-        <div id="video_time">
+    <div class="back-container">
+        <a href="portfolio.html" class="btn-back">Gå tilbake</a>
+    </div>
+    <figure class="video-container">
+        <section id="media_player">
+            <video poster="assets/media/images/favicon.png" preload="metadata" title="Vår historie">
+                <source src="assets/media/video/OurStory/Our stoy_1.webm" type="video/webm">
+            </video>
             <progress value="0" id="playback"></progress>
-            <span id="elapsed">00:00:00</span><span id="duration">00:00:00</span>
-        </div>
-        <div id="video_seek"> 
-            <input type="range" id="seek" title="seek" value="0" min="0" max="0">
-        </div>
-        <section id="video_controls">
-            <button type="button" id="play" title="Play">
-                &#xF04B;
-            </button>
-            <button type="button" id="pause" title="Pause">
-                &#xF04C;
-            </button>
-            <span>
-                <label for="volume" title="Volume">&#xf027;</label>
-                <input type="range" id="volume" title="volume" min="0" max="1" step=".1" value="1">	
-            </span>
+            <div id="video_time">
+                <span id="elapsed">00:00:00</span><span id="duration">00:00:00</span>
+            </div>
+            <div id="video_seek"> 
+                <input type="range" id="seek" title="spol" value="0" min="0" max="0">
+            </div>
+            <section id="video_controls">
+                <button type="button" id="play" title="Spill av">
+                    &#xF04B;
+                </button>
+                <button type="button" id="pause" title="Pause" class="hidden">
+                    &#xF04C;
+                </button>
+                <span>
+                    <label for="volume" title="Volum">&#xf027;</label>
+                    <input type="range" id="volume" title="volum" min="0" max="1" step=".1" value="1">	
+                </span>
+            </section>
         </section>
-    </section>
-    <footer class="des">
-        <hr class="style-video">
-            #1. Our Story.<br> created : 20.05-16.
-    </footer>
+        <figcaption class="video-caption">
+            <hr class="style-video">
+            <strong>#1. Vår historie.</strong><br> Opprettet: 20.05.2016
+        </figcaption>
+    </figure>
 </main>
 <!-- include "footer" -->
