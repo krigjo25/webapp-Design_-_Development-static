@@ -1,14 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const video = document.querySelector('video') as HTMLVideoElement | null;
     const play = document.getElementById('play') as HTMLElement | null;
     const pause = document.getElementById('pause') as HTMLElement | null;
     const seek = document.getElementById('seek') as HTMLInputElement | null;
+    const video = document.querySelector('video') as HTMLVideoElement | null;
     const volume = document.getElementById('volume') as HTMLInputElement | null;
     const playback = document.getElementById('playback') as HTMLInputElement | null;
 
-    if (!video || !play || !pause || !seek || !volume || !playback) {
-        return;
-    }
+    if (!video || !play || !pause || !seek || !volume || !playback) { return; }
 
     function clickhandler(event: Event): void {
         const target = event.target as HTMLElement;
