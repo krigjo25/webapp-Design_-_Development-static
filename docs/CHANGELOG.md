@@ -2,10 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2026-05-31
+### Added
+- Consolidated all project diagrams into a single, high-quality colored Draw.io file (`docs/diagrams.drawio`).
+- Implemented a second tab in the diagrams for **Runtime Flow**, providing a detailed map of browser execution.
+
+### Fixed
+- Resolved persistent stacking context issues where the site header and logo would overlap the high-resolution lightbox.
+- Applied the maximum possible integer `z-index` (2147483647) with `!important` to the modal and its close button to guarantee they are the topmost elements.
+- Fixed TypeScript "redeclaration" errors in `menu.ts` and `news.ts` by refining global jQuery type declarations.
+
+### Changed
+- **Final Codebase Purge:** Removed all redundant and empty source files (`figure.ts`, `logo.ts`, `slideshow.ts`, `offlineStylesheets.ts`) to maintain a lean architecture.
+- **Refined Styling:** Removed all unnecessary `z-index` properties from main content containers to ensure a clean, modern stacking order.
+
 ## [2.1.0] - 2026-05-31
 ### Added
 - Integrated the **K-Design 3D version** as the primary site header logo.
-- Enhanced the high-resolution overlay with an **absolute topmost z-index (2147483647)** to ensure it always covers the header and navigation.
+- Enhanced the high-resolution overlay with an **absolute topmost z-index** to ensure it always covers the header and navigation.
 - Implemented a **fixed-position close button** for the modal, ensuring it remains accessible even when scrolling.
 - Added **Keyboard Navigation** support (Esc key) to close active lightboxes.
 - Improved Profile Card on the "Om meg" page with **Flexbox row layout** and **25% strict scaling**.
@@ -17,7 +31,7 @@ All notable changes to this project will be documented in this file.
 - Corrected TypeScript compilation errors caused by redundant global declarations in `menu.ts` and `news.ts`.
 
 ### Changed
-- **Technical Cleanup:** Purged redundant and empty source files (`figure.ts`, `logo.ts`, `slideshow.ts`, etc.) to streamline the architecture.
+- **Technical Cleanup:** Purged redundant and empty source files to streamline the architecture.
 - **Enhanced Overlay Visuals:** Increased the modal viewport size for desktop inspection and enforced robust centering and italics for all captions.
 
 ## [2.0.0] - 2026-05-31
@@ -27,7 +41,7 @@ All notable changes to this project will be documented in this file.
 - Implemented a 3-column responsive news grid on the landing page.
 - Created `src/assets/sass/components/_animations.sass` for centralized animation gallery styling.
 - Added "Gå tilbake" (Go Back) buttons to all sub-portfolio pages for improved navigation.
-- Added comprehensive Context and Architecture diagrams in `docs/diagrams.drawio` (colored and multi-tabbed).
+- Added comprehensive Context and Architecture diagrams in `docs/diagrams.drawio`.
 - Re-added the **K-Design Previous Version** logo and grouped it with the **3D version** in a dedicated collection.
 - Added **E-Media** logo to the gallery with its own high-resolution overlay.
 - Created `src/photoshoot.html` to showcase photography work with grouped collection lightboxes.
@@ -38,30 +52,20 @@ All notable changes to this project will be documented in this file.
 - Fixed circular skill bar rendering by correcting canvas drawing logic and adding background tracks.
 - Improved modal close button functionality (fixed positioning, larger hit area, and keyboard navigation).
 - Standardized all captions to be centered and italicized across the entire site.
-- Resolved TypeScript redeclaration errors for jQuery and $ globals.
 - Corrected various broken image paths and CSS links after asset reorganization.
 
 ### Changed
 - **Major Modernization:** Orchestrated by **Antigravity-cli** & **Gemini-cli**.
 - **Localization:** Entire application translated to **Norwegian** (Nyheter, Om meg, Portefølje).
-- **CSS Standards:** Converted all physical properties to **Logical Properties** (inline-size, block-size) and units to **rem**.
+- **CSS Standards:** Converted all physical properties to **Logical Properties** and units to **rem**.
 - **Gallery Redesign:** Transformed vector and logo pages into flat Flexbox galleries with 25% scale previews.
-- **Header Update:** Updated site header to use the 3D version of the K-Design logo.
 - **README Update:** Rewrote `README.md` in Intermediate English with detailed installation and build instructions.
-- **Build System:** Refined `build.ts` to include explicit directory cleaning and better logging.
 
 ## [1.1.0] - 2026-05-30
 ### Added
 - Initial modernization effort: Migrated core logic to TypeScript and implemented Sass.
 - Restructured news feed and about us layouts with glassmorphic cards.
-- Integrated header and footer templates into all primary HTML pages.
-- Converted main navigation to SVG icons.
-
-### Fixed
-- Corrected skillbar selector queries and portfolio image paths.
-- Fixed template import paths for the build script.
 
 ## [1.0.0] - 2014-05-30
 ### Added
 - Original release of the web application built with plain JavaScript and traditional CSS.
-- Core portfolio sections for vectors, logos, and animations.
