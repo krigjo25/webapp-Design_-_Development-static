@@ -73,10 +73,7 @@ The project uses npm scripts to build the site:
 You can find more details and diagrams in the [docs/](./docs/) folder:
 
 - **[Architecture Overview](./docs/architecture.md):** Information about the project structure and how it works.
-- **[Diagrams](./docs/diagram/):** Visual maps of the system:
-  - **[Context Diagram](./docs/diagram/context.drawio):** Shows how the user interacts with the app.
-  - **[Architecture Diagram](./docs/diagram/architecture.drawio):** Shows the path from source code to the final build.
-
+- **[Diagrams](./docs/diagrams.drawio):** Visual diagrams
 ---
 
 ## License
