@@ -23,14 +23,9 @@ function processFile(filePath: string) {
   
   // If a <title> already exists, replace it; otherwise insert before </head>
   let newContent: string;
-  if (content.includes('<title>')) {
-    newContent = content.replace(/<title>.*?<\/title>/s, titleTag);
-  } else if (content.includes('</head>')) {
-    newContent = content.replace('</head>', `  ${titleTag}\n</head>`);
-  } else {
-    // fallback: prepend title at start
-    newContent = `${titleTag}\n${content}`;
-  }
+  if (content.includes('<title>')) { newContent = content.replace(/<title>.*?<\/title>/s, titleTag);
+  } else if (content.includes('</head>')) { newContent = content.replace('</head>', `  ${titleTag}\n</head>`);
+  } else { newContent = `${titleTag}\n${content}`; }
   fs.writeFileSync(metadata.path, newContent, 'utf8');
   console.log(`Updated title for ${path.basename(metadata.path)}`);
 }
@@ -40,11 +35,9 @@ function walkDir(dir: string) {
   files.forEach(file => {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
-    if (stat.isDirectory()) {
-      walkDir(filePath);
-    } else if (file.endsWith('.html')) {
-      processFile(filePath);
-    }
+    
+    if (stat.isDirectory()) { walkDir(filePath);
+    } else if (file.endsWith('.html')) { processFile(filePath); }
   });
 }
 

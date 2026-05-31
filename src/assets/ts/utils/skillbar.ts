@@ -33,7 +33,7 @@ class Progress implements ProgressOptions {
     run(): void {
         const centerX = this.width / 2;
         const centerY = this.height / 2;
-        const radius = (this.width / 2) - 5; // Subtract half of lineWidth
+        const radius = (this.width / 2) - 6; // Reduced to prevent clipping
 
         // 1. Clear the canvas
         this.context.clearRect(0, 0, this.width, this.height);
@@ -52,8 +52,10 @@ class Progress implements ProgressOptions {
         this.context.lineCap = 'round';
         
         // Calculate the end angle based on loaded percentage
-        const endAngle = ((this.loaded / 100) * Math.PI * 2) + this.start;
-        this.context.arc(centerX, centerY, radius, this.start, endAngle, false);
+        // 1.5 * Math.PI is exactly the top
+        const startAngle = 1.5 * Math.PI;
+        const endAngle = ((this.loaded / 100) * Math.PI * 2) + startAngle;
+        this.context.arc(centerX, centerY, radius, startAngle, endAngle, false);
         this.context.stroke();
 
         // 4. Draw the percentage text
@@ -61,7 +63,7 @@ class Progress implements ProgressOptions {
         this.context.textBaseline = "middle";
         this.context.fillStyle = "#333";
         this.context.font = "bold 14px 'Open Sans'";
-        this.context.fillText(this.loaded + "%", centerX, centerY);
+        this.context.fillText(Math.floor(this.loaded) + "%", centerX, centerY);
 
         if (this.loaded >= this.total) { 
             clearInterval(this.timer); 
