@@ -26,24 +26,15 @@ function play(quizData: QuizData): void {
     gameOver();
 }
 
-function ask(question: string): string | null {
-    return prompt(question);
-}
+function ask(question: string): string | null { return prompt(question); }
 
 function check(answer: string | null, correctAnswer: string): void {
     if (answer === correctAnswer) { // Hvis Svar er lik spørsmålet
         alert("Congratulations you had the correct answer");
         Gcore++;
-    } else { 
-        alert("Fail, you've written incorrect name.");
-    }
+    } else {  alert("Fail, you've written incorrect name."); }
 }
 
 function gameOver(): void {	
-    // After the game is over
-    if (Gcore >= 5) {
-        alert("Congratulations, you've answered" + " " + Gcore + " " + " Of 5 possible Gcore");  
-    } else {
-        alert("Game over, better luck next time, you've received:  " + Gcore + " Gcore");
-    }
+    if (Gcore >= 5) alert("Congratulations, you've answered" + " " + Gcore + " " + " Of 5 possible Gcore");  else alert("Game over, better luck next time, you've received:  " + Gcore + " Gcore");
 }

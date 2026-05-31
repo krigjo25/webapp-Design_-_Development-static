@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.1] - 2026-05-31
+### Changed
+- Refactored and simplified `ninja.ts` game logic for better readability.
+
 ## [2.5.0] - 2026-05-31
 ### Added
 - Moved `ninja.ts` game logic into the centralized `src/assets/ts/` directory for better structural consistency.
