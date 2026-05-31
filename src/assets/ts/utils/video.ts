@@ -10,21 +10,32 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (!video || !play || !pause || !seek || !volume || !playback) { return; }
 
+    const formattime: TimeFormatter = (timeinseconds: number): string => {
+        if (isNaN(timeinseconds)) return '00:00:00';
+        
+        const hours = Math.floor(timeinseconds / 3600);
+        const minutes = Math.floor((timeinseconds % 3600) / 60);
+        const seconds = Math.floor(timeinseconds % 60);
+        
+        const h = hours < 10 ? '0' + hours : hours;
+        const m = minutes < 10 ? '0' + minutes : minutes;
+        const s = seconds < 10 ? '0' + seconds : seconds;
+        
+        return h + ':' + m + ':' + s;
+    }
+
     function clickhandler(event: Event): void {
         const target = event.currentTarget as HTMLElement;
         const id = target.id;
-        if (video && play && pause) {
-            if (id === 'play') {
-                video.play();
-                video.preload = 'metadata';
-                play.classList.add('hidden');
-                pause.classList.remove('hidden');
-            }
-            if (id === 'pause') {
-                video.pause();
-                pause.classList.add('hidden');
-                play.classList.remove('hidden');
-            }
+        if (id === 'play') {
+            video?.play().catch(e => console.error("Playback failed:", e));
+            play?.classList.add('hidden');
+            pause?.classList.remove('hidden');
+        }
+        if (id === 'pause') {
+            video?.pause();
+            pause?.classList.add('hidden');
+            play?.classList.remove('hidden');
         }
     }
  
@@ -66,20 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (target.currentTime && playback) {
             playback.value = Math.floor(target.currentTime).toString();
         }
-    }
-
-    const formattime: TimeFormatter = (timeinseconds: number): string => {
-        if (isNaN(timeinseconds)) return '00:00:00';
-        
-        const hours = Math.floor(timeinseconds / 3600);
-        const minutes = Math.floor((timeinseconds % 3600) / 60);
-        const seconds = Math.floor(timeinseconds % 60);
-        
-        const h = hours < 10 ? '0' + hours : hours;
-        const m = minutes < 10 ? '0' + minutes : minutes;
-        const s = seconds < 10 ? '0' + seconds : seconds;
-        
-        return h + ':' + m + ':' + s;
     }
 
     function timeupdatehandler(event: Event): void {

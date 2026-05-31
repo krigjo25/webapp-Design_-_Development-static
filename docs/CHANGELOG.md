@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.5] - 2026-05-31
+### Fixed
+- Improved video player robustness by reorganizing function initialization and adding error handling for playback.
+- Refined the "Rainbow" lesson to manipulate the background of the `main` section instead of the entire document body.
+
 ## [2.5.4] - 2026-05-31
 ### Fixed
 - Resolved issues with the skill bar animation by refining the calculation logic and ensuring 100% completion.
