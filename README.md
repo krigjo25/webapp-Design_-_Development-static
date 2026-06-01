@@ -8,6 +8,14 @@ The app is a portfolio that shows my work in vector art, branding, animations, a
 
 ---
 
+## Project History & Evolution
+
+Originally built in 2014, this application was my very first web project. At the time, it utilized **PHP** to handle layout templating and logic, as it was designed to run on an **Apache server**. 
+
+As part of the 2026 modernization, I converted the entire codebase to **TypeScript**. This transition allowed for a move away from server-side PHP dependencies toward a more robust, type-safe, and modern static site architecture using a custom Node.js build system.
+
+---
+
 ## Technologies Used
 
 - **HTML5** – Used for the structure of the website.
